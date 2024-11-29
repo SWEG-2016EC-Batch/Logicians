@@ -1,5 +1,6 @@
 The program calculates an employee's net salary after accounting for bonuses, pensions, and tax deductions based on their
 weekly working hours and base salary.
+
 Input:
 The employee's name.
 Weekly working hours.
