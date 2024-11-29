@@ -13,10 +13,10 @@ Calculate the pension deduction: pensiondeduction = 0.05 * gross_salary
 Calculate the tax deduction: taxdeduction = 0.15 * gross_salary
 Calculate the net salary: net_salary = gross_salary - (pensiondeduction + taxdeduction)
 Output:
-The employee's name.
-The bonus payment.
-The gross salary.
-The net salary.
+The employee's name,
+The bonus payment,
+The gross salary,
+The net salary,
 
 Algorithm Design
 step 1: Start:
