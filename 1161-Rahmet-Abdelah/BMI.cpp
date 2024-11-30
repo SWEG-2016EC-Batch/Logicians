@@ -6,6 +6,11 @@ int main(){
      //accepting input‍
     cout<<"for how many persons do you want to calculate the BMI "<<endl;‍
     cin>>person;‍
+    if(cin.fail()){
+     cout<<"please enter correct inuput"<<endl;
+     cin.clear();
+     cin.ignore();
+    }
 ‍
     for(int i=1; i<=person; i++){‍
     cout << "please enter your weight: " << endl;‍
