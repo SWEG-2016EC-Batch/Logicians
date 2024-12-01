@@ -5,7 +5,7 @@ int main()
 {
    string name;
    int week_working_hour,base_salary;
-   double tax_rate=0.15,penstion_rate=0.05,bonus_rate_per_hour;
+   double tax_rate=0.15,pension_rate=0.05,bonus_rate_per_hour;
    
    cout<<"Enter your name"<<endl;
    cin>>name;
@@ -42,14 +42,14 @@ int main()
   
    double bonus_payment= 4*(week_working_hour*bonus_rate_per_hour); //We multiply by 4 to get monthly bonus payment
    double gross_salary= base_salary + bonus_payment;
-   double penstion= gross_salary*0.05;
+   double pension= gross_salary*0.05;
    double tax= gross_salary*0.15;
-   double  net_salary= gross_salary-(tax+penstion);
+   double  net_salary= gross_salary-(tax+pension);
    
    cout<<"Your name is:"<<name<<endl;
    cout<<"The total gross salary of the month is:"<<gross_salary<<endl;
    cout<<"The bonus payment of the month is:"<<bonus_payment<<endl;
-   cout<<"The penstion deduction is:-"<<penstion<<endl;
+   cout<<"The pension deduction is:-"<<pension<<endl;
    cout<<"The tax deduction is:-"<<tax<<endl;
    cout<<"The total net salary of the month is:"<<net_salary<<endl;
 
