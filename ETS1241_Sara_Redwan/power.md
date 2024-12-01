@@ -3,7 +3,7 @@
 **Goal:** The program is designed to calculate and show the result of raising a number (base) to a specific power (exponent).</p>
 1. **Input:** Two numbers:
    - The base (x) and 
-   - The exponent (y).
+   - The exponent (y)
 2. **Process:**
    - Calculate the power using pow(x, y). 
 3. **Output:**
