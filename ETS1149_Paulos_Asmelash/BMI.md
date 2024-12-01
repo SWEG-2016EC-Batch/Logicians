@@ -54,9 +54,28 @@ Step 4: If num is !=y
 Step 5: End
 
 # Flow Chart
-
-
-    
+``` mermaid
+graph TD
+    A[Start Program] --> B[Initialize variables: body weight, height, BMI, num]
+    B --> C[Repeat until num is 'y']
+    C --> D["Enter your body weight in kilograms"]
+    D --> E[Input body weight]
+    E --> F["Enter your height in meters"]
+    F --> G[Input height]
+    G --> H["Calculate BMI (BMI = body weight / (height * height))"]
+    H --> I["Your Body Mass Index is: BMI"]
+    I --> J{Is BMI < 18?}
+    J -->|Yes| K["You are under weight"]
+    J -->|No| L{Is BMI < 25?}
+    L -->|Yes| M["You are normal weight"]
+    L -->|No| N["You are over weight"]
+    K --> O["Do you want to continue? [y:n]"]
+    M --> O
+    N --> O
+    O --> P[Input num]
+    P --> Q{Is num == 'y'?}
+    Q -->|No| R[End]
+    Q -->|Yes| C
 
 
 
