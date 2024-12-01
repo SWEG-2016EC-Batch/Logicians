@@ -51,7 +51,7 @@ Step 6: Print "Enter your bonus rate per hour"
 
 Step 7: Input `bonus_rate_per_hour` from the user
 
-Step 8: Print "Enter your base salary for a week"
+Step 8: Print "Enter your base salary for a month"
 
 Step 9: Input `base_salary` from the user
 
@@ -89,7 +89,7 @@ graph TD
     D --> E[/Input week_working_hour/]
     E --> F[/"Enter your bonus rate per hour"/]
     F --> G[/Input bonus_rate_per_hour/]
-    G --> H[/"Enter your base salary for a week"/]
+    G --> H[/"Enter your base salary for a month"/]
     H --> I[/Input base_salary/]
     I --> J["Calculate bonus_payment = 4 * (week_working_hour * bonus_rate_per_hour)"]
     J --> K["Calculate gross_salary = base_salary + bonus_payment"]
