@@ -1,3 +1,19 @@
+Problem Analysis‍
+‍The goal of the program is to calculate the power of a number  x  raised to  y  (i.e.,  xʸ ). The program should take two inputs from the user: the base  x  and the exponent  y . The output should be the result of  xʸ .‍
+‍
+1. Input:‍
+‍  Base  x  
+  Exponent  y  
+   ‍
+2. Output:‍
+‍   The result of  xʸ .‍
+‍
+3. operation
+   do the operation base the power of exponent,using cmath library pow(base,exponent)
+
+
+psedocode
+
 Step 1:start
 Step 2:variable initialization
 Step 3:accept and read the inputs
