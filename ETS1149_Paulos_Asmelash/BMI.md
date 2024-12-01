@@ -23,7 +23,7 @@ BMI and Weight category (underweight, normal weight, overweight)
 
 Step 1: Start the program.
 
-Step 2: Initializ: body weight, height, BMI, num.
+Step 2: Declare: body weight, height, BMI, num.
 
 Step 3: Repeat the following until num is 'y':
 
