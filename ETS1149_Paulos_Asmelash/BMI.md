@@ -56,25 +56,25 @@ Step 5: End
 # Flow Chart
 ``` mermaid
 graph TD
-    A[Start Program] --> B[Declare:body weight,height,BMI,num]
+    A([Start program]) --> B[/Declare:body weight,height,BMI,num/]
     B --> C[Repeat until num is 'y']
-    C --> D["Enter your body weightin kg"]
-    D --> E[Input body weight]
-    E --> F["Enter your height in meters"]
-    F --> G[Input height]
+    C --> D[/"Enter your body weightin kg"/]
+    D --> E[/Input body weight/]
+    E --> F[/"Enter your height in meters"/]
+    F --> G[/Input height/]
     G --> H["BMI =body weight /height^2"]
-    H --> I["Your Body Mass Index: BMI"]
+    H --> I[/"Your Body Mass Index: BMI"/]
     I --> J{Is BMI < 18?}
-    J -->|Yes| K["You are under weight"]
+    J -->|Yes| K[/"You are under weight"/]
     J -->|No| L{Is BMI < 25?}
-    L -->|Yes| M["You are normal weight"]
-    L -->|No| N["You are over weight"]
+    L -->|Yes| M[/"You are normal weight"/]
+    L -->|No| N[/"You are over weight"/]
     K --> O["Do you want to continue?[y:n]"]
     M --> O
     N --> O
-    O --> P[Input num]
+    O --> P[/Input num/]
     P --> Q{Is num == 'y'?}
-    Q -->|No| R[End]
+    Q -->|No| R([End])
     Q -->|Yes| C
 
 
