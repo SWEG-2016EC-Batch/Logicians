@@ -1,34 +1,32 @@
 #include <iostream>
 using namespace std;
-
-int main() {
-    float weight, height, BMI;
-    int NumBMI;
-
-    cout << "Enter the number of people you want to calculate BMI\n";
-    cin >> NumBMI;
-
-    for (int i = 1; i <= NumBMI; i++) {
-        cout << "Enter the body weight in kilogram: ";
-        cin >> weight;
-        cout << "Enter the height of the body in meter: ";
-        cin >> height;
-
-        height *= height; // Squaring the height
-        BMI = weight / height;
-
-        cout << "Body mass index = " << BMI << endl;
-
-        if (BMI <18.5) {
-            cout << "Underweight" << endl;
-        } else if (BMI >=18.5 && BMI<=24.9) {
-            cout << "Normal and healthy weight" << endl;
-        } else if(BMI>=25 && BMI<=29.9) {
-            cout << "Overweight" << endl;
-        }else{
-            cout<<"Obese!";
-        }
+int main()
+{
+    float mass,height,bmi;
+    char i;
+    do{
+    cout <<"Insert your mass in kilogram"<<endl;
+    cin>>mass;
+     cout <<"Insert your height in meters  "<<endl;
+    cin>>height;
+    height*=height;
+    bmi=mass/height;
+    cout <<"BMI="<<bmi<<endl;
+    if (bmi<18.5){
+     cout <<"Your are under weight"<<endl;
     }
-
-    return 0;
-}
+    else if (bmi>=18.5 &&  bmi<=24.9)   {
+     cout <<"Your are in normal weight"<<endl;
+    }
+    else if (bmi>=25 &&  bmi<=29.9)   {
+     cout <<"Your are in over weight"<<endl;
+    }
+    else if (bmi>=30 )   {
+     cout <<"Your are in obesity"<<endl;
+    }
+    cout <<"if you want to calculate for other people insert any character or to stop enter 0"
+   <<endl;
+   cin>>i;}
+   while( i !='0');
+    
+    return 0;}
