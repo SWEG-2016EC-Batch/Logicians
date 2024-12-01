@@ -23,7 +23,7 @@ BMI and Weight category (underweight, normal weight, overweight)
 
 Step 1: Start the program.
 
-Step 2: Initialize variables: body weight, height, BMI, num.
+Step 2: Initializ: body weight, height, BMI, num.
 
 Step 3: Repeat the following until num is 'y':
 
@@ -56,9 +56,9 @@ Step 5: End
 # Flow Chart
 ``` mermaid
 graph TD
-    A[Start Program] --> B[Initialize variables: body weight, height, BMI, num]
+    A[Start Program] --> B[Declare:body weight,height,BMI,num]
     B --> C[Repeat until num is 'y']
-    C --> D["Enter your body weight in kilograms"]
+    C --> D["Enter your body weightin kg"]
     D --> E[Input body weight]
     E --> F["Enter your height in meters"]
     F --> G[Input height]
