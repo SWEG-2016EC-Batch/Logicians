@@ -49,3 +49,26 @@ Finally, it prints the result of x^y.
 9.Print the result in the format: x^y = k
 
 10.End Program
+# FLOWCHART 
+```mermaid
+graph TD
+    A([Start Program]) --> B[Declare variables]
+    B --> C[/Print 'insert base'/]
+    C --> D[/Input base x from user/]
+    D --> E[/Print 'insert exponent'/]
+    E --> F[/Input exponent y from user/]
+    F --> G{Is y <= 0?}
+    
+    G -->|Yes| H[Start loop from i = y to i < 0]
+    H --> I[Multiply k by 1/x in each iteration]
+    I --> J[End loop]
+    
+    G -->|No| K[Start loop from i = 1 to i <= y]
+    K --> L[Multiply k by x in each iteration]
+    L --> M[End loop]
+
+    J --> N[/Print 'x^y = k'/]
+    M --> N
+    N --> O([End Program])
+
+
