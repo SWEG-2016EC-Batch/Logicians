@@ -57,3 +57,30 @@ Step 8: End the program
 
 
 # Flowchart:
+
+``` mermaid
+flowchart TD
+    A([Start the program]) --> B[/Initialize variables/]
+    B --> C[/Prompt user for file size in MB/]
+    C --> D[/"Input file_size (in MB)"/]
+    D --> E[Convert file_size to bytes]
+    E --> F[Calculate total time in seconds]
+    F --> G[Calculate time breakdown]
+
+    G --> H[Calculate Days]
+    H --> I[Set days = totaltime_taken_sec / 86400]
+    I --> J[Update totaltime_taken_sec = totaltime_taken_sec % 86400]
+    
+    J --> K[Calculate Hours]
+    K --> L[Set hour = totaltime_taken_sec / 3600]
+    L --> M[Update totaltime_taken_sec = totaltime_taken_sec % 3600]
+    
+    M --> N[Calculate Minutes]
+    N --> O[Set minute = totaltime_taken_sec / 60]
+    O --> P[Update totaltime_taken_sec = totaltime_taken_sec % 60]
+
+    P --> Q[Calculate Seconds]
+    Q --> R[Set seconds = totaltime_taken_sec]
+
+    R --> S[/Output the result/]
+    S --> T([End the program])
