@@ -37,6 +37,6 @@ graph TD
     B --> C[/Input fuel_capacity/]
     C --> D[/"Enter the number of miles per gallon the car can be driven"/]
     D --> E[/Input miles_per_gallon/]
-    E --> F["Total miles=fuel_cap * miles_per_gallon"]
+    E --> F["Total miles= fuel_capacity * miles_per_gallon"]
     F --> G[/Total miles travel/]
     G --> H([End])
