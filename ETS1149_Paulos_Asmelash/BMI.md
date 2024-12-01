@@ -6,7 +6,7 @@
 . Height (in meters)
 
 ### Process:
-Calculate BMI using the formula: BMI= w/(h*h).
+Calculate BMI using the formula: BMI= w/(height*height).
 
 Determine the weight category based on BMI:
 
