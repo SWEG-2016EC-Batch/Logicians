@@ -12,4 +12,12 @@
 **step 4:** Display the Result: Print the message displaying x raised to the power y along with the calculated result. </p>
 **step 5:** End:</p>
 ## Flowchart
+``` mermaid
+flowchart 
+    id1([Start]) --> id2[/enter the base number and store it in x/]
+    id2 --> id3[/ enter the exponent and store it in y/]
+    id3 --> id4[Calculate x raised to the power y using the pow function and store it in result]
+    id4 --> id5[/Display the result/]
+    id5 --> id6([End])
+
 
