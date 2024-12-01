@@ -42,11 +42,12 @@ Step 7: Else if `y` is less than 0:
  # Flow Chart
  ``` mermaid
 graph TD
-
-    A[Start Program] --> B["Enter the base number"]
-    B --> C["Input x (base number)"]
-    C --> D["Enter the exponent number"]
-    D --> E["Input y (exponent)"]
+  
+    A([start program]) --> B[/Enter base number/]
+    
+    B --> C[/input base number/]
+    C --> D[/Enter exponent number/]
+    D --> E[/input exponent number/]
     E --> F{Is y > 0?}
     
     F -->|Yes| G["For i from 1 to y (inclusive), multiply k by x"]
@@ -58,9 +59,9 @@ graph TD
     
    
     
-    H --> M[End]
+    H --> M([End])
     K --> M
    
-
+	
 
 
