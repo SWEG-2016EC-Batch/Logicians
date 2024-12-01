@@ -39,7 +39,7 @@ Step 7: Else if `y` is less than 0:
 
  Step 8: End the program.
 
- # Flow Chart
+ # Flowchart
  ``` mermaid
 graph TD
   
