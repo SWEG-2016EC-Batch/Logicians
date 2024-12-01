@@ -53,7 +53,7 @@ Step 4: If num is !=y
 
 Step 5: End
 
-# Flow Chart
+# Flowchart
 ``` mermaid
 graph TD
     A([Start program]) --> B[/Declare:body weight,height,BMI,num/]
