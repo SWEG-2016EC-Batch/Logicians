@@ -2,8 +2,11 @@
 
 ### Input:
 • Employee name
+
 • Weekly working hours
+
 • Base salary
+
 • Bonus rate per hour
 
 ### Process:
