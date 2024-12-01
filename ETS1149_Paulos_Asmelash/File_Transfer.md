@@ -64,8 +64,8 @@ flowchart TD
     B --> C[/Prompt user for file size in MB/]
     C --> D[/"Input file_size (in MB)"/]
     D --> E[Convert file_size to bytes]
-    E --> F[Calculate total time in seconds]
-    F --> G[Calculate time breakdown]
+    E --> F[Calculate total time in seconds as: Time taken = file size / 960.]
+    F --> G[Calculate time breakdowm]
 
     G --> H[Calculate Days]
     H --> I[Set days = totaltime_taken_sec / 86400]
