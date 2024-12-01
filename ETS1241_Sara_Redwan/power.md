@@ -8,7 +8,7 @@
 ## Pseudocode
 **step 1:** Start:</p>
 **step 2:** Input: Prompt the user to enter the base number and store it in x. Prompt the user to enter the exponent and store it in y.</p>
-**step 3:** Calculate the Power: Use the pow function from the library to calculate x raised to the power y. Store the result in result.<</p> 
+**step 3:** Calculate the Power: Use the pow function from the library to calculate x raised to the power y. Store the result in result.</p> 
 **step 4:** Display the Result: Print the message displaying x raised to the power y along with the calculated result. </p>
 **step 5:** End:</p>
 ## Flowchart
