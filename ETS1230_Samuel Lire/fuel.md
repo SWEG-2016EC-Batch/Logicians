@@ -39,7 +39,7 @@ total_mile: The total number of miles the automobile can drive without refueling
    ```mermaid
      
 graph TD;
-    A([START]) --> B[/DECLARE capacity_in_gallon, total_mile, mile_in_Pergallon as DOUBLE/]
+    A([START]) --> B[DECLARE capacity_in_gallon, total_mile, mile_in_Pergallon as DOUBLE]
     B --> C[/DISPLAY prompt to input capacity_in_gallon/]
     C --> D[/READ capacity_in_gallon/]
     D --> E[/DISPLAY prompt to input mile_in_Pergallon/]
