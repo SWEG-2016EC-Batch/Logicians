@@ -58,7 +58,7 @@ Step 5: End
 graph TD
     A([Start program]) --> B[/Declare:body weight,height,BMI,num/]
     B --> C[Repeat until num is 'y']
-    C --> D[/"Enter your body weightin kg"/]
+    C --> D[/"Enter your body weight in kilogram"/]
     D --> E[/Input body weight/]
     E --> F[/"Enter your height in meters"/]
     F --> G[/Input height/]
