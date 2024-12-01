@@ -79,7 +79,7 @@ Step 20: Print "The total net salary of the month is: `net_salary`
 
 Step 21: End the program.
 
-# Flow Chart
+# Flowchart
 
 ``` mermaid
 graph TD
