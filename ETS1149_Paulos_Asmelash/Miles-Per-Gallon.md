@@ -30,7 +30,7 @@ Total Miles Travel = Fuel_capacity * Miles per gallon
 
  Step 8: End the program.
 
- # Flow Chart
+ # Flowchart
 ``` mermaid
 graph TD
     A([Start Program]) --> B[/"Enter your fuel tank capacity of the car in gallons"/]
