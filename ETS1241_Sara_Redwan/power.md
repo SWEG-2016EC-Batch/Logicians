@@ -1,9 +1,9 @@
 # Power Calculator program
 ## Design Analysis
-**Goal:** The program is designed to calculate and show the result of raising a number (base) to a specific power (exponent).
-**Input:** Two numbers: the base (x) and the exponent (y).
-**Process:** Calculate the power using pow(x, y). 
-**Output:** Display the result, showing how x raised to the power of y equals the calculated result.
+**Goal:** The program is designed to calculate and show the result of raising a number (base) to a specific power (exponent).</p>
+**Input:** Two numbers: the base (x) and the exponent (y).</p>
+**Process:** Calculate the power using pow(x, y). </p>
+**Output:** Display the result, showing how x raised to the power of y equals the calculated result.</p>
 
 ## Pseudocode
 **step 1:** Start:</p>
