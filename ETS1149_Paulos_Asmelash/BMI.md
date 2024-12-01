@@ -62,14 +62,14 @@ graph TD
     D --> E[Input body weight]
     E --> F["Enter your height in meters"]
     F --> G[Input height]
-    G --> H["Calculate BMI (BMI = body weight / (height * height))"]
-    H --> I["Your Body Mass Index is: BMI"]
+    G --> H["BMI =body weight /height^2"]
+    H --> I["Your Body Mass Index: BMI"]
     I --> J{Is BMI < 18?}
     J -->|Yes| K["You are under weight"]
     J -->|No| L{Is BMI < 25?}
     L -->|Yes| M["You are normal weight"]
     L -->|No| N["You are over weight"]
-    K --> O["Do you want to continue? [y:n]"]
+    K --> O["Do you want to continue?[y:n]"]
     M --> O
     N --> O
     O --> P[Input num]
