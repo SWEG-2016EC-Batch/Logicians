@@ -1,11 +1,17 @@
 # problem analysis for the question
+##Problem Analysis:
+### Input: 
+• Fuel_capacity in gallons
+
+• Miles_per_gallon 
 
 
+### Process:
+Total Miles Travel = Fuel_capacity * Miles per gallon
 
+### Output:
 
-
-
-
+• Total number of miles the automobile can be driven without refueling
 
 
 ## psedocode
