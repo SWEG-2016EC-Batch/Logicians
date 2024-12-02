@@ -25,3 +25,12 @@ Step 4:power the first number by the second number(you can use cmath library)
 Step 5:print the result
 
 Step 6:end
+
+## Flowchart
+``` mermaid
+flowchart 
+    A([Start]) --> id2[/enter the base number and store it in x/]
+    B --> C[/ enter the exponent and store it in y/]
+    C--> D[Calculate x raised to the power y using the pow function and store it in result]
+    D --> E[/Display the result/]
+    E --> F([End])
