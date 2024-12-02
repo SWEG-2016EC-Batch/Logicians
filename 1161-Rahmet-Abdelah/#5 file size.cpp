@@ -1,23 +1,34 @@
-#include <iostream>‍
-using namespace std;‍
-int main(){‍
-float file_size,time,hour;//declaring variables‍
-  a:
-cout << "enter your file size in mb(only write the number)" << endl;‍
-cin >> file_size;‍
-if(cin.fail()){‍
-   cout << "please input valid number" << endl;‍
-cin.clear();‍
-cin.ignore();
-goto a;}‍
-   //converting megabytea to bytes‍
-file_size=file_size*1000000;‍
-cout << "your file in bytes is: " << file_size<<endl;‍
-‍
-   //960 char can be done in 1 second.since char takes 1 byte.‍
-time=file_size/960;‍
-cout << "your file will take " <<time<<" seconds to be executed" <<endl;‍
-hour=time/3600;‍
-cout << "in hours it will take  " <<hour <<"hours"<< endl;‍
-‍
-return 0;}
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int transmission_rate=960,totaltime_taken_sec;
+    double file_size;
+    
+    a:
+    cout<<"Enter the amount of your file in Megabyte"<<endl;
+    cin>>file_size;
+    if (cin.fail() || file_size<=0){
+        cin.clear();
+        cin.ignore();
+        cout<<"Invalid input enter again"<<endl;
+        goto a;
+        }
+  
+    file_size*=1048576; //to get the total number of bytes
+    
+    totaltime_taken_sec=file_size/transmission_rate;
+    
+    int days= totaltime_taken_sec/86400;
+    totaltime_taken_sec= totaltime_taken_sec%86400;
+    int hour= totaltime_taken_sec/3600;
+    totaltime_taken_sec= totaltime_taken_sec%3600;
+    int minute= totaltime_taken_sec/60;
+    int seconds= totaltime_taken_sec%60;
+    
+    cout<<"This file is needed ="<<days<<"days: "<<hour<<"hour: "<<minute<<"minute: "<<seconds<<"seconds. "<<"To be fully sented"<<endl;
+    
+
+    return 0;
+}
