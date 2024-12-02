@@ -30,11 +30,7 @@ Step 6:end
 ``` mermaid
 flowchart 
     A([Start]) --> B[/enter the base number and store it in x/]
-    B --> C{is input valid?}
-    C -->|NO|D[/please enter valid input/]
-    C -->|Yes|E[/enter the exponent and store it in y/]
-    E --> F{is input valid?}
-    F -->|NO|G[/please enter valid input/]
-    F -->|Yes|H[Calculate x raised to the power y using the pow function and store it in result]
-    H --> I[/Display the result/]
-    I --> J([End])
+    B --> C[/enter the exponent and store it in y/]
+    C --> D[Calculate x raised to the power y using the pow function and store it in result]
+    D --> E[/Display the result/]
+    E --> F([End])
