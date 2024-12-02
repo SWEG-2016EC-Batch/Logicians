@@ -63,24 +63,26 @@ flowchart TD
     A([Start the program]) --> B[/Initialize variables/]
     B --> C[/Prompt user for file size in MB/]
     C --> D[/"Input file_size (in MB)"/]
-    D --> E[Convert file_size to bytes]
-    E --> F[Calculate total time in seconds as: Time taken = file size / 960.]
-    F --> G[Calculate time breakdowm]
-
-    G --> H[Calculate Days]
-    H --> I[Set days = totaltime_taken_sec / 86400]
-    I --> J[Update totaltime_taken_sec = totaltime_taken_sec % 86400]
+    D --> E{is input valid?}
+    E -->|No|F[/input is invalid/]
+    F -->G([terminate the program])
+    E -->|Yes|H[Convert file_size to bytes]
+    H --> I[Calculate total time in seconds as: Time taken = file size / 960.]
+    I --> J[Calculate time breakdown]
+    J --> K[Calculate Days]
+    K --> L[Set days = totaltime_taken_sec / 86400]
+    L --> M[Update totaltime_taken_sec = totaltime_taken_sec % 86400]
     
-    J --> K[Calculate Hours]
-    K --> L[Set hour = totaltime_taken_sec / 3600]
-    L --> M[Update totaltime_taken_sec = totaltime_taken_sec % 3600]
+    M --> N[Calculate Hours]
+    N --> O[Set hour = totaltime_taken_sec / 3600]
+    O --> P[Update totaltime_taken_sec = totaltime_taken_sec % 3600]
     
-    M --> N[Calculate Minutes]
-    N --> O[Set minute = totaltime_taken_sec / 60]
-    O --> P[Update totaltime_taken_sec = totaltime_taken_sec % 60]
+    P --> Q[Calculate Minutes]
+    Q --> R[Set minute = totaltime_taken_sec / 60]
+    R --> S[Update totaltime_taken_sec = totaltime_taken_sec % 60]
 
-    P --> Q[Calculate Seconds]
-    Q --> R[Set seconds = totaltime_taken_sec]
+    S --> T[Calculate Seconds]
+    T --> U[Set seconds = totaltime_taken_sec]
 
-    R --> S[/Output the result/]
-    S --> T([End the program])
+    U --> V[/Output the result/]
+    V --> W([End the program])
