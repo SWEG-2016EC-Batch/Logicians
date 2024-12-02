@@ -1,3 +1,15 @@
+# problem analysis for the question
+
+
+
+
+
+
+
+
+
+## psedocode
+
 Step1:start
 
 Step2:variable initialization
