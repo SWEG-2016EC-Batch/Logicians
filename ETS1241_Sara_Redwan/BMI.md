@@ -49,7 +49,7 @@ Step 3: Repeat the following until i is not'0':
      Step 3.6.3: Else if BMI <= 29.9, , print "You are over weight"
      Step 3.6.4: Else  print"You are in obesity"
 
-Step 3.7:if you want to calculate for othe people insert any character or to stop enter 0"
+Step 3.7:if you want to calculate for other people insert any character or to stop enter 0"
 
     Step 3.7.1: Input i
 
