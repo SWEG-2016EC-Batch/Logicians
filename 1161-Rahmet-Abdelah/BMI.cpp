@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 int main()
@@ -30,5 +31,4 @@ int main()
    while( i !='0');
     
     return 0;}
-
 
