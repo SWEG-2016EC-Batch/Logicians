@@ -1,5 +1,4 @@
-
-Problem Statement:
+# Problem Statement :
 Design an algorithm and write a program to read an employee's name, weekly working hours, bonus rate per hour, and base salary. Calculate the employee's gross salary, net salary, and bonus payment. The pension rate is 5%, and the tax rate is 15%.
 
 Inputs:
