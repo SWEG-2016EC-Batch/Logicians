@@ -35,8 +35,12 @@ Step6:end
 graph TD
     A([Start Program]) --> B[/"Enter your fuel tank capacity of the car in gallons"/]
     B --> C[/Input fuel_capacity/]
-    C --> D[/"Enter the number of miles per gallon the car can be driven"/]
-    D --> E[/Input miles_per_gallon/]
-    E --> F["Total miles= fuel_capacity * miles_per_gallon"]
-    F --> G[/Total miles travel/]
-    G --> H([End])
+    C -->D{is input valid?}
+    D -->|No|E[/enter valid input/]
+    D -->|Yes|F[/"Enter the number of miles per gallon the car can be driven"/]
+    F -->G[/Input miles_per_gallon/]
+    G -->H{is input valid}
+    H -->|No|I[/enter valid input/]
+    H -->|Yes|J["Total miles= fuel_capacity * miles_per_gallon"]
+    J --> K[/Total miles travel/]
+    K --> L([End])
