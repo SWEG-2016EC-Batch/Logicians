@@ -41,7 +41,7 @@ Step 3: Repeat the following until num is 'y':
 
      Step 3.6.1: If BMI < 18.4, print "You are under weight"
 
-     Step 3.6.2: Else if BMI < 24.9, print "You are normal weight"
+     Step 3.6.2: Else if BMI < 24.9 and >18.4, print "You are normal weight"
 
      Step 3.6.3: Else, print "You are over weight"
 
