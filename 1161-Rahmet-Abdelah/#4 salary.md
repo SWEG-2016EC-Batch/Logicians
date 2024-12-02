@@ -52,19 +52,28 @@ graph TD
     B --> C[/Input name/]
     C --> D[/"Enter your weekly working hours"/]
     D --> E[/Input week_working_hour/]
-    E --> F[/"Enter your bonus rate per hour"/]
-    F --> G[/Input bonus_rate_per_hour/]
-    G --> H[/"Enter your base salary for a month"/]
-    H --> I[/Input base_salary/]
-    I --> J["Calculate bonus_payment = 4 * (week_working_hour * bonus_rate_per_hour)"]
-    J --> K["Calculate gross_salary = base_salary + bonus_payment"]
-    K --> L["Calculate pension = gross_salary * 0.05"]
-    L --> M["Calculate tax = gross_salary * 0.15"]
-    M --> N["Calculate net_salary = gross_salary - (tax + pension)"]
-    N --> O[/"Print 'Your name is: ' + name"/]
-    O --> P[/"Print 'The total gross salary of the month is: ' + gross_salary"/]
-    P --> Q[/"Print 'The bonus payment of the month is: ' + bonus_payment"/]
-    Q --> R[/"Print 'The pension deduction is: ' + pension"/]
-    R --> S[/"Print 'The tax deduction is: ' + tax"/]
-    S --> T[/"Print 'The total net salary of the month is: ' + net_salary"/]
-    T --> U([End])
+    E --> F{is the input valid?}
+    F -->|NO|G[/invalid input/]
+    G -->M([end]) 
+    F -->|Yes|I[/"Enter your bonus rate per hour"/]
+    I --> J[/Input bonus_rate_per_hour/]
+    J -->K{is the input valid?}
+    K -->|NO|L[/"input is invalid"/]
+    L -->M([end])
+    K -->|Yes|N[/"Enter your base salary for a month"/]
+    N -->O[/Input base_salary/]
+    O --> P{is input valid?}
+    P -->|NO|Q[/"input is invalid"/]
+    Q -->M([end])
+    P -->|Yes|R["Calculate bonus_payment = 4 * (week_working_hour * bonus_rate_per_hour)"]
+    R -->S["Calculate gross_salary = base_salary + bonus_payment"]
+    S --> V["Calculate pension = gross_salary * 0.05"]
+    V --> W["Calculate tax = gross_salary * 0.15"]
+    W --> X["Calculate net_salary = gross_salary - (tax + pension)"]
+    X --> Y[/"Print 'Your name is: ' + name"/]
+    Y --> Z[/"Print 'The total gross salary of the month is: ' + gross_salary"/]
+    Z --> A1[/"Print 'The bonus payment of the month is: ' + bonus_payment"/]
+    A1 --> B1[/"Print 'The pension deduction is: ' + pension"/]
+    B1 --> C1[/"Print 'The tax deduction is: ' + tax"/]
+    C1 --> D1[/"Print 'The total net salary of the month is: ' + net_salary"/]
+    D1 --> E1([End])
