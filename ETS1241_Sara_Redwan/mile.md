@@ -31,12 +31,20 @@ Total Miles Travel = Fuel_capacity * Miles per gallon
  Step 8: End the program.
 
  # Flowchart
-``` mermaid
+```mermaid
 graph TD
-    A([Start Program]) --> B[/"Enter your fuel tank capacity of the car in gallons"/]
-    B --> C[/Input fuel_capacity/]
-    C --> D[/"Enter the number of miles per gallon the car can be driven"/]
-    D --> E[/Input miles_per_gallon/]
-    E --> F["Total miles= fuel_capacity * miles_per_gallon"]
-    F --> G[/Total miles travel/]
+    A([Start Program]) --> B[/Input fuel_capacity/]
+    B --> C{Is the fuel capacity a positive number?}
+    C -->|Yes| D[/Input miles_per_gallon/]
+    C -->|No| B
+    D --> E{Is the miles per gallon a positive number?}
+    E --> |Yes| F[Calculate: Total miles = fuel_capacity * miles_per_gallon]
+    E -->|No| D
+    F --> G[/print the result/]
     G --> H([End])
+    
+
+
+
+
+
