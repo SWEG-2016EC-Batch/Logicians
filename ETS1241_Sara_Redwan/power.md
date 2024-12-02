@@ -12,11 +12,15 @@
 ## Pseudocode
 **step 1:** Start
 
-**step 2:** Input: Prompt the user to enter the base number and store it in x. Prompt the user to enter the exponent and store it in y.
+**step 2:** Input:
+- Prompt the user to enter the base number and store it in x. 
+_Prompt the user to enter the exponent and store it in y.
 
-**step 3:** Calculate the Power: Use the pow function from the library to calculate x raised to the power y. Store the result in result.
+**step 3:** Calculate the Power: 
+_ Use the pow function from the library to calculate x raised to the power y. Store the result in result.
 
-**step 4:** Display the Result: Print the message displaying x raised to the power y along with the calculated result. 
+**step 4:** Display the Result: 
+_Print the message displaying x raised to the power y along with the calculated result. 
 
 **step 5:** End
 ## Flowchart
