@@ -37,17 +37,21 @@ Step 10. Print `total_mile` variable.
 Step 11. Stop the program.
 
  # Flowchart
-```mermaid
+``` mermaid
 graph TD
-    A([Start Program]) --> B[/Input fuel_capacity/]
-    B --> C{Is the fuel capacity a positive number?}
-    C -->|Yes| D[/Input miles_per_gallon/]
-    C -->|No| B
-    D --> E{Is the miles per gallon a positive number?}
-    E --> |Yes| F[Calculate: Total miles = fuel_capacity * miles_per_gallon]
-    E -->|No| D
-    F --> G[/print the result/]
-    G --> H([End])
+    A([Start Program]) --> B[/"Enter your fuel tank capacity of the car in gallons"/]
+    B --> C[/Input fuel_capacity/]
+    C -->D{is input valid?}
+    D -->|No|E[/enter valid input/]
+    E -->F([end])
+    D -->|Yes|G[/"Enter the number of miles per gallon the car can be driven"/]
+    G -->H[/Input miles_per_gallon/]
+    H -->I{is input valid}
+    I -->|No|J[/enter valid input/]
+    J -->F([end])
+    I -->|Yes|K["Total miles= fuel_capacity * miles_per_gallon"]
+    K --> L[/Total miles travel/]
+    L --> M([End])
     
 
 
