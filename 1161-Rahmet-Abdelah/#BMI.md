@@ -1,66 +1,78 @@
-# problem analysis
+ # Problem Analysis
 
+ ### Input:
+ . Weight (in kilograms)
 
-# psedocode
+. Height (in meters)
 
-Step 1:start.
+### Process:
+Calculate BMI using the formula: BMI= w/(height*height).
 
-Step 2:variable initialization
+Determine the weight category based on BMI:
 
-Step 3:read positive  integer  number both weight and height,and ask for how many person to do it
+Underweight: BMI < 18.4
 
-Step 4:find the BMI 
+Normal weight: 18.4 ≤ BMI < 24.9
 
-Step 4.1:declare BMI
+Overweight: BMI >= 24.9
 
-      Step 4.2:find h*h
+### Output:
+BMI and Weight category (underweight, normal weight, overweight)
 
-     Step 4.3: divide the weight by the height square
+# Algorithm
 
-     Step 4.4:store the value in the variable BMI 
+Step 1: Start the program.
 
-     Step 4.5:check if the BMI
-           Step 4.5.1:is greater than 18.5 and <24.9, print normalweight
+Step 2: Declare: body weight, height, BMI, num.
 
-           Step 4.5.2:is lesser than 18.5 print under weight
-           Step 4.5.3:if  greater than 24.9  print over weight posture
+Step 3: Repeat the following until num is 'y':
 
-Step5:repeat until it meets the number of persons
+   Step 3.1: Print "Enter your body weight in kilograms"
+ 
+   Step 3.2: Input body weight
 
-Step 7:end;
+   Step 3.3: Print "Enter your height in meters"
+
+   Step 3.4: Input height
+
+   Step 3.5: Calculate BMI as BMI = body weight / (height * height)
+
+   Step 3.6: Print "Your Body Mass Index is: BMI"
+
+     Step 3.6.1: If BMI < 18.4, print "You are under weight"
+
+     Step 3.6.2: Else if BMI < 24.9, print "You are normal weight"
+
+     Step 3.6.3: Else, print "You are over weight"
+
+Step 3.7: Print "Do you want to continue? [y:n]."
+
+    Step 3.7.1: Input num
+
+Step 4: If num is !=y
+
+Step 5: End
 
 # Flowchart
 ``` mermaid
-graph TD;
-    A([Start the program]) --> B[/Declare variables: body_weight, height, BMI, i/]
-    B --> C[Repeat the following until i is 0]
-    
-    C --> D[/Print 'Enter your mass in kilograms'/]
-    D --> E[/Input body_weight/]
-    E --> F[/Print 'Enter your height in meters'/]
+graph TD
+    A([Start program]) --> B[/Declare:body weight,height,BMI,num/]
+    B --> C[Repeat until num is 'y']
+    C --> D[/"Enter your body weight in kilogram"/]
+    D --> E[/Input body weight/]
+    E --> F[/"Enter your height in meters"/]
     F --> G[/Input height/]
-    G --> H[Calculate BMI]
-    H --> I[/Print 'Your Body Mass Index is: '/]
-    
-    I --> J[Display BMI calculation]
-    
-    I --> K{Is BMI < 18?}
-    K -->|Yes| L[/Print 'You are underweight'/]
-    K -->|No| M{Is BMI <= 24.9?}
-    
-    M -->|Yes| N[/Print 'You are in normal weight'/]
-    M -->|No| O{Is BMI <= 29.9?}
-    
-    O -->|Yes| P[/Print 'You are overweight'/]
-    O -->|No| Q[/Print 'You are in obesity'/]
-    
-    L --> R[/Ask for next input: 'If you want to calculate for another person, enter any character; to stop, enter 0'/]
-    N --> R
-    P --> R
-    Q --> R
-    
-    R --> S[/Input i/]
-    S --> T{Is i != 0?}
-    
-    T -->|Yes| C
-    T -->|No| U([End the program])
+    G --> H["BMI =body weight /height^2"]
+    H --> I[/"Your Body Mass Index: BMI"/]
+    I --> J{Is BMI < 18.4?}
+    J -->|Yes| K[/"You are under weight"/]
+    J -->|No| L{Is BMI < 24.9?}
+    L -->|Yes| M[/"You are normal weight"/]
+    L -->|No| N[/"You are over weight"/]
+    K --> O["Do you want to continue?[y:n]"]
+    M --> O
+    N --> O
+    O --> P[/Input num/]
+    P --> Q{Is num == 'y'?}
+    Q -->|No| R([End])
+    Q -->|Yes| C
