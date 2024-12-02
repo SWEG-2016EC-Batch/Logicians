@@ -6,14 +6,14 @@ int main()
     int transmission_rate=960,totaltime_taken_sec;
     double file_size;
     
-    a:
+    
     cout<<"Enter the amount of your file in Megabyte"<<endl;
     cin>>file_size;
     if (cin.fail() || file_size<=0){
         cin.clear();
         cin.ignore();
         cout<<"Invalid input enter again"<<endl;
-        goto a;
+        break;
         }
   
     file_size*=1048576; //to get the total number of bytes
