@@ -37,7 +37,6 @@ Step 10. Print `total_mile` variable.
 Step 11. Stop the program.
 
  # Flowchart
-```mermaid
 ``` mermaid
 graph TD
     A([Start Program]) --> B[/"Enter your fuel tank capacity of the car in gallons"/]
