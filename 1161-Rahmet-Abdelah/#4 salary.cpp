@@ -8,25 +8,25 @@ double  pension_deduction,gross_salry,net_salary,tat_deduction;‍
 ‍
 cout << "please eneter your  name\n" << endl;‍
 cin >> name;‍
-a:
+
 cout << "please enter your weekly working hour\n " << endl;‍
 cin >> weekly_working_hour;‍
   if(cin.fail()){
     cout<<"input valid input"<<endl;
     cin.clear();
     cin.ignore();
-    goto a;
+    break;
   }
-b:
+
 cout << "please enter your bonus rate ber hour\n " << endl;‍
 cin >> bonus_rate;‍
    if(cin.fail()){
     cout<<"input valid input"<<endl;
     cin.clear();
     cin.ignore();
-    goto b;
+    break;
 
-  c:
+
 cout << "please enter your base salary\n " << endl;‍
 cin >> base_salary;‍
 
@@ -34,7 +34,7 @@ cin >> base_salary;‍
     cout<<"input valid input"<<endl;
     cin.clear();
     cin.ignore();
-    goto c;
+    break;
    
 bonus_payment=bonus_rate*weekly_working_hour;‍
 gross_salary=bonus_payment+base_salary;‍
