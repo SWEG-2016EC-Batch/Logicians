@@ -1,55 +1,34 @@
- #inlcude <iostream>
+#include <iostream>
 using namespace std;
-int main(){
-   double weight,height,BMI,person;  //declaring variables‍
-‍
-     //accepting input‍
-    a:
-    cout<<"for how many persons do you want to calculate the BMI "<<endl;‍
-    cin>>person;‍
-    if(cin.fail()){
-      cout<<"please enter correct inuput"<<endl;
-     cin.clear();
-     cin.ignore();
-     goto a;
+int main()
+{
+    float mass,height,bmi;
+    char i;
+    do{
+    cout <<"Insert your mass in kilogram"<<endl;
+    cin>>mass;
+     cout <<"Insert your height in meters  "<<endl;
+    cin>>height;
+    height*=height;
+    bmi=mass/height;
+    cout <<"BMI="<<bmi<<endl;
+    if (bmi<18.5){
+     cout <<"Your are under weight"<<endl;
     }
-‍
-    for(int i=1; i<=person; i++){
-     ‍b:
-    cout << "please enter your weight: " << endl;‍
-    cin>>weight;‍
-     if(cin.fail()){
-      cout<<"please enter correct inuput"<<endl;
-     cin.clear();
-     cin.ignore();
-     goto b;}
-     c:
-    cout << "please enter your height: " << endl;‍
-    cin>>height;‍
-     if(cin.fail()){
-      cout<<"please enter correct inuput"<<endl;
-     cin.clear();
-     cin.ignore();
-     goto c;}
+    else if (bmi>=18.5 &&  bmi<=24.9)   {
+     cout <<"Your are in normal weight"<<endl;
+    }
+    else if (bmi>=25 &&  bmi<=29.9)   {
+     cout <<"Your are in over weight"<<endl;
+    }
+    else if (bmi>=30 )   {
+     cout <<"Your are in obesity"<<endl;
+    }
+    cout <<"if you want to calculate for other people insert any character or to stop enter 0"
+   <<endl;
+   cin>>i;}
+   while( i !='0');
     
-‍
-    height*=height;//we can use cmath library instead to do the power‍
-    BMI=weight/height;‍
-‍
-‍
-    cout<<"your BMI is "<<BMI<<endl;‍
-‍
-      if(BMI<18.5){‍
-        cout<<"you are under weight"<<endl;‍
-      }‍
-     else if(BMI>=18.5 && BMI<=24.9){‍
-        cout<<"you are normal weight"<<endl;}‍
-     else i‍f(BMI>=24.9){
-        cout<<"you are over weight "<<endl;‍
-    }‍
-    }
- ‍cout<<"you have finished your operation,run again if you want to do for more people"
-‍
-‍
-    return 0;‍
-}
+    return 0;}
+
+
