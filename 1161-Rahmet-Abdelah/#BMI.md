@@ -1,4 +1,7 @@
-#psedocode
+# problem analysis
+
+
+# psedocode
 
 Step 1:start.
 
