@@ -1,57 +1,52 @@
-#include <iostream>
-using namespace std;
+#include <iostream>‍
+using namespace std;‍
+int main(){‍
+string name;‍
+double weekly_working_hour,bonus_rate,base_salary,bonus_payment;
+double  pension_deduction,gross_salry,net_salary,tat_deduction;‍
+‍
+‍
+cout << "please eneter your  name\n" << endl;‍
+cin >> name;‍
+a:
+cout << "please enter your weekly working hour\n " << endl;‍
+cin >> weekly_working_hour;‍
+  if(cin.fail()){
+    cout<<"input valid input"<<endl;
+    cin.clear();
+    cin.ignore();
+    goto a;
+  }
+b:
+cout << "please enter your bonus rate ber hour\n " << endl;‍
+cin >> bonus_rate;‍
+   if(cin.fail()){
+    cout<<"input valid input"<<endl;
+    cin.clear();
+    cin.ignore();
+    goto b;
 
-int main()
-{
-   string name;
-   int week_working_hour,base_salary;
-   double tax_rate=0.15,pension_rate=0.05,bonus_rate_per_hour;
-   
-   cout<<"Enter your name"<<endl;
-   cin>>name;
-   
-   a:
-   cout<<"Enter your weekly working hours\n";
-   cin>>week_working_hour;
-   
-   if (cin.fail() || week_working_hour<=0){
-        cin.clear();
-        cin.ignore();
-        cout<<"Invalid input enter again"<<endl;
-        goto a;
-        }
-   b:
-   cout<<"Enter your bonus rate per hour\n";
-   cin>>bonus_rate_per_hour;
-     if (cin.fail() || bonus_rate_per_hour<=0){
-        cin.clear();
-        cin.ignore();
-        cout<<"Invalid input enter again"<<endl;
-        goto b;
-        }
-   
-   c:
-   cout<<"Enter your base salary of a month\n";
-   cin>>base_salary;
-   if (cin.fail() || bonus_rate_per_hour<=0){
-        cin.clear();
-        cin.ignore();
-        cout<<"Invalid input enter again"<<endl;
-        goto c;
-        }
-  
-   double bonus_payment= 4*(week_working_hour*bonus_rate_per_hour); //We multiply by 4 to get monthly bonus payment
-   double gross_salary= base_salary + bonus_payment;
-   double pension= gross_salary*0.05;
-   double tax= gross_salary*0.15;
-   double  net_salary= gross_salary-(tax+pension);
-   
-   cout<<"Your name is:"<<name<<endl;
-   cout<<"The total gross salary of the month is:"<<gross_salary<<endl;
-   cout<<"The bonus payment of the month is:"<<bonus_payment<<endl;
-   cout<<"The pension deduction is:-"<<pension<<endl;
-   cout<<"The tax deduction is:-"<<tax<<endl;
-   cout<<"The total net salary of the month is:"<<net_salary<<endl;
+  c:
+cout << "please enter your base salary\n " << endl;‍
+cin >> base_salary;‍
 
-    return 0;
-}
+ if(cin.fail()){
+    cout<<"input valid input"<<endl;
+    cin.clear();
+    cin.ignore();
+    goto c;
+   
+bonus_payment=bonus_rate*weekly_working_hour;‍
+gross_salary=bonus_payment+base_salary;‍
+   
+pension_deduction=0.05*gross_salary;‍
+tax_deduction=0.15*gross_salary;‍
+   
+net_salary=gross_salry-(pension_deduction+tax_deduction);‍
+   
+cout << "dear " <<name<< endl;‍
+cout << "your gross salary adding your bonus payment is:" <<gross_salary<< endl;‍
+cout << "your net salary deducting pention and tax  is:" <<net_salary<< endl;‍
+‍
+‍
+return 0;}
