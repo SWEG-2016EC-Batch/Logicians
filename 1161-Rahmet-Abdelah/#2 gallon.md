@@ -37,10 +37,12 @@ graph TD
     B --> C[/Input fuel_capacity/]
     C -->D{is input valid?}
     D -->|No|E[/enter valid input/]
-    D -->|Yes|F[/"Enter the number of miles per gallon the car can be driven"/]
-    F -->G[/Input miles_per_gallon/]
-    G -->H{is input valid}
-    H -->|No|I[/enter valid input/]
-    H -->|Yes|J["Total miles= fuel_capacity * miles_per_gallon"]
-    J --> K[/Total miles travel/]
-    K --> L([End])
+    E -->F([end])
+    D -->|Yes|G[/"Enter the number of miles per gallon the car can be driven"/]
+    G -->H[/Input miles_per_gallon/]
+    H -->I{is input valid}
+    I -->|No|J[/enter valid input/]
+    J -->F([end])
+    I -->|Yes|K["Total miles= fuel_capacity * miles_per_gallon"]
+    K --> L[/Total miles travel/]
+    L --> M([End])
