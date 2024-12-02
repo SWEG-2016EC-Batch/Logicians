@@ -43,3 +43,28 @@ Step4.3:calculate the net salary
 Step5 :print the results
 
 Step6:end
+
+# Flowchart
+
+``` mermaid
+graph TD
+    A([Start Program]) --> B[/"Enter your name"/]
+    B --> C[/Input name/]
+    C --> D[/"Enter your weekly working hours"/]
+    D --> E[/Input week_working_hour/]
+    E --> F[/"Enter your bonus rate per hour"/]
+    F --> G[/Input bonus_rate_per_hour/]
+    G --> H[/"Enter your base salary for a month"/]
+    H --> I[/Input base_salary/]
+    I --> J["Calculate bonus_payment = 4 * (week_working_hour * bonus_rate_per_hour)"]
+    J --> K["Calculate gross_salary = base_salary + bonus_payment"]
+    K --> L["Calculate pension = gross_salary * 0.05"]
+    L --> M["Calculate tax = gross_salary * 0.15"]
+    M --> N["Calculate net_salary = gross_salary - (tax + pension)"]
+    N --> O[/"Print 'Your name is: ' + name"/]
+    O --> P[/"Print 'The total gross salary of the month is: ' + gross_salary"/]
+    P --> Q[/"Print 'The bonus payment of the month is: ' + bonus_payment"/]
+    Q --> R[/"Print 'The pension deduction is: ' + pension"/]
+    R --> S[/"Print 'The tax deduction is: ' + tax"/]
+    S --> T[/"Print 'The total net salary of the month is: ' + net_salary"/]
+    T --> U([End])
