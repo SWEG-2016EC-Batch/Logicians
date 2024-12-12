@@ -27,7 +27,7 @@ int main()
     cout <<"if you want to calculate for other people insert any character or to stop enter 0"
    <<endl;
    cin>>i;}
-   while( i !='0');
+   while( i != 0);
     
     return 0;}
 
