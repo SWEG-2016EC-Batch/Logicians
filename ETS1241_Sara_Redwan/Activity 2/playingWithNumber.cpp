@@ -2,14 +2,6 @@
 #include <cmath>
 using namespace std;
 
-int factorial(int n) {
-    int fact = 1;
-    for (int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-    return fact;
-}
-
 int main() {
     int number, reverse_Number = 0, reminder, product = 1;
     int first, last, swapped_num;
@@ -23,22 +15,19 @@ int main() {
     cout << "Enter the number: ";
     cin >> number;
 
-    int org_num = number;
-
     if (number == 0) {
         cout << "You entered 0" << endl;
         digitFrequency[0] = 1; 
         return 0;
     }
 
+    int org_num = number; // Original number preserved once
     last = number % 10;
 
-    
-    int temp_number = org_num;
-    while (temp_number != 0) {
-        reminder = temp_number % 10;
+    while (number != 0) {
+        reminder = number % 10;
         digitFrequency[reminder]++; 
-        temp_number /= 10;
+        number /= 10;
     }
 
     cout << "Menu:\n";
@@ -58,11 +47,11 @@ int main() {
     switch(choice) {
         case 1:
             // Reverse the number
-            temp_number = org_num; 
+            number = org_num; 
             reverse_Number = 0; 
-            while (temp_number != 0) {
-                reminder = temp_number % 10;
-                temp_number /= 10;
+            while (number != 0) {
+                reminder = number % 10;
+                number /= 10;
                 reverse_Number = (reverse_Number * 10) + reminder;
             }
             cout << "The reverse of " << org_num << " is " << reverse_Number << endl;
@@ -70,10 +59,10 @@ int main() {
 
         case 2:
             // Count the number of digits
-            temp_number = org_num;
+            number = org_num;
             counter = 0; 
-            while (temp_number != 0) {
-                temp_number /= 10;
+            while (number != 0) {
+                number /= 10;
                 counter++;
             }
             cout << "Number of digits in " << org_num << " is " << counter << " digits\n";
@@ -82,13 +71,13 @@ int main() {
         case 3:
             // Product of even digits
             product = 1; 
-            temp_number = org_num;
-            while (temp_number != 0) {
-                reminder = temp_number % 10;
+            number = org_num;
+            while (number != 0) {
+                reminder = number % 10;
                 if (reminder % 2 == 0) {
                     product *= reminder;
                 }
-                temp_number /= 10;
+                number /= 10;
             }
             cout << "The product of the even numbers is " << product << endl;
             break;
@@ -106,10 +95,10 @@ int main() {
 
         case 5:
             // Swap the first and last digits
-            temp_number = org_num;
+            number = org_num;
             counter = 0; 
-            while (temp_number != 0) {
-                temp_number /= 10;
+            while (number != 0) {
+                number /= 10;
                 counter++;
             }
             middle_part = (org_num % (int)pow(10, counter - 1)) / 10;
@@ -119,12 +108,12 @@ int main() {
 
         case 6:
             // Check if the original number is equal to the reversed number
-            temp_number = org_num; 
+            number = org_num; 
             reverse_Number = 0; 
-            while (temp_number != 0) {
-                reminder = temp_number % 10;
+            while (number != 0) {
+                reminder = number % 10;
                 reverse_Number = (reverse_Number * 10) + reminder;
-                temp_number /= 10;
+                number /= 10;
             }
             if (org_num == reverse_Number) {
                 cout << org_num << " is a palindrome." << endl;
@@ -135,12 +124,16 @@ int main() {
 
         case 7:
             // Strong number calculation
-            temp_number = org_num; 
+            number = org_num; 
             strongSum = 0; 
-            while (temp_number > 0) {
-                reminder = temp_number % 10;
-                strongSum += factorial(reminder);
-                temp_number /= 10;
+            while (number > 0) {
+                reminder = number % 10;
+                int fact = 1;
+                for (int i = 1; i <= reminder; i++) {
+                    fact *= i;
+                }
+                strongSum += fact;
+                number /= 10;
             }
             if (strongSum == org_num) {
                 cout << org_num << " is a Strong number." << endl;
@@ -171,7 +164,7 @@ int main() {
             cout << "----------------\n";
             for (int i = 0; i < 10; i++) {
                 if (digitFrequency[i] > 0) {
-                    cout<<" " << i << "       " << digitFrequency[i] << endl;
+                    cout << i << "        " << digitFrequency[i] << endl;
                 }
             }
             break;
