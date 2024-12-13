@@ -64,25 +64,3 @@
 
 10. **End**
 
-## Flow chart
-```mermaid
-graph TD;
-    A([Start]) --> B[/Input Test Score/];
-    B --> C{Is Test Score Valid?};
-    C -- No --> B;
-    C -- Yes --> D[/Input Quiz Score/];
-    D --> E{Is Quiz Score Valid?};
-    E -- No --> D;
-    E -- Yes --> F[/Input Project Score/];
-    F --> G{Is Project Score Valid?};
-    G -- No --> F;
-    G -- Yes --> H[/Input Assignment Score/];
-    H --> I{Is Assignment Score Valid?};
-    I -- No --> H;
-    I -- Yes --> J[/Input Final Exam Score/];
-    J --> K{Is Final Exam Score Valid?};
-    K -- No --> J;
-    K -- Yes --> L[Calculate Total Mark];
-    L --> M{Decide Letter Grade};
-    M --> N[/Output Total Mark and Letter Grade/];
-    N --> O([End]);
