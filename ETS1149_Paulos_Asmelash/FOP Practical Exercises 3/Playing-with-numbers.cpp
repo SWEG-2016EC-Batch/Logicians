@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int menu,first=0,last=0,freq=0,newNum=0;
+    int menu,first=0,last=0,newNum=0;
     long number,reverse=0,originalNumber,product=1,sum=0,remain;
     bool hasEven;
+    int frequency[10] = {0}; 
+
     cout<<"please choose one of the options from the following"<<endl;
     cout << "1. Reverse of the number" << endl;
     cout << "2. Number of digits" << endl;
@@ -87,15 +89,27 @@ int main() {
             }
             break;
         case 7:
-            while (number > 0) {
-                remain = number % 10;
-                if (remain == first) {
-                    freq++;
-                }
-                number /= 10;
-            }
-            cout << "Frequency of first digit: " << freq << endl;
-            break;
+    
+    if (number == 0) {
+        frequency[0] = 1;
+    } else {
+        while (number > 0) {
+            int digit = number % 10; 
+            frequency[digit]++;       
+            number /= 10;             
+        }
+    }
+
+    
+  cout << "\nDigit Frequency Table:\n";
+   cout << "-----------------------\n";
+   cout << "Digit | Frequency\n";
+   cout << "-----------------------\n";
+    
+    for (int i = 0; i < 10; ++i) {
+    cout << "  " << i << "   |     " << frequency[i] << "\n";
+    }
+    break;
         case 8:
             originalNumber=number;
             while (number!=0){
