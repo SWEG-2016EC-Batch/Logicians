@@ -93,20 +93,4 @@
 
 12. **End**
 
-## Flow chart
-```mermaid
-graph TD;
-    A([Start]) --> B[/Input Basic Salary/];
-    B --> C[/Input Working Hours/];
-    C --> D[/Input Bonus Rate/];
-    D --> E{Working Hours > 40?};
-    E -- Yes --> F[/Input Overtime Bonus Rate/];
-    F --> G[Calculate Overtime Bonus];
-    G --> H[Calculate Gross Salary];
-    E -- No --> H[Calculate Gross Salary];
-    H --> I[Calculate Pension];
-    I --> J{Determine Tax Rate};
-    J --> K[Calculate Tax];
-    K --> L[Calculate Net Salary];
-    L --> M[/Output Results/];
-    M --> N([End]);
+
