@@ -1,0 +1,66 @@
+    #include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    const int totalPassengers = 100; // Change this to handle more passengers
+    string passengerNames[totalPassengers];
+    int passengerCount = 0;
+    int choice;
+    string searchName;
+
+    while (true) {
+        // Display menu for this option
+        cout << "Airline Seat Reservation System" << endl;
+        cout << "1. Add Passenger" << endl;
+        cout << "2. Search Passenger by Name" << endl;
+        cout << "3. Display All Passengers" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore(); 
+
+        if (choice == 1) {
+          
+            if (passengerCount < totalPassengers) {
+                cout << "Enter passenger name: ";
+                getline(cin, passengerNames[passengerCount]);
+                passengerCount++;
+                cout << "Passenger added successfully!" << endl;
+            } else {
+                cout << "Passenger list is full!" << endl;
+            }
+        } else if (choice == 2) {
+            // Search Passenger by Name
+            cout << "Enter the name of the passenger to search: ";
+            getline(cin, searchName);
+            bool found = false;
+            for (int i = 0; i < passengerCount; i++) {
+                if (passengerNames[i] == searchName) {
+                    cout << "Passenger " << searchName << " found to reserve a seat at order " << i+1 << "." << endl;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                cout << "Passenger " << searchName << " not found." << endl;
+            }
+        } else if (choice == 3) {
+            // Display All Passengers
+            cout << "Passenger List:" << endl;
+            for (int i = 0; i < passengerCount; i++) {
+                cout << i + 1 << ". " << passengerNames[i] << endl;
+            }
+        } else if (choice == 4) {
+           
+            cout << "Exiting..." << endl;
+            break;
+        } else {
+            cout << "Invalid choice. Please try again." << endl;
+        }
+        cout << endl; 
+    }
+
+    return 0;
+}
