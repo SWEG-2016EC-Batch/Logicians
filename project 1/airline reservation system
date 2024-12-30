@@ -38,11 +38,7 @@ int main() {
             getline(cin, searchName);
             bool found = false;
             for (int i = 0; i < passengerCount; i++) {
-                if (passengerNames[i] == searchName) {
-                    cout << "Passenger " << searchName << " found to reserve a seat at order " << i+1 << "." << endl;
-                    found = true;
-                    break;
-                }
+               
             }
             if (!found) {
                 cout << "Passenger " << searchName << " not found." << endl;
