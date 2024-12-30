@@ -4,7 +4,8 @@
 using namespace std;
 
 int main() {
-    const int totalPassengers = 100; 
+    const int totalPassengers = 100;  // Change this to handle more passengers
+
     string passengerNames[totalPassengers];
     int passengerCount = 0;
     int choice;
