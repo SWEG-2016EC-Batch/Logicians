@@ -64,3 +64,78 @@ int main() {
 
     return 0;
 }
+   
+
+
+
+
+
+
+
+
+//my part
+#include <iostream>
+#include <string>
+using namespace std;
+int main(){
+    int choice;
+    const int numberOfFlights=5;
+    string flights[numberOfFlights]={"a1","a2","a3","a4","a5"};
+     string destinations[numberOfFlights]={"addis","Adama","harar"," gonder","jijiga"};
+     string depatureTimes[numberOfFlights]={"07:00","08:00","09:00am","06:00","09;30am"};
+     bool  isAvailable[numberOfFlights]={true,false,true,true,false};                      
+    while(true){
+
+        cout<<" *****flight information***** "<<endl;
+        cout<<"1.view all flights"<<endl;
+        cout<<"2.flight details"<<endl;
+        cout<<"0.exit"<<endl;
+        cout<<"eneter your choice"<<endl;
+        cin>>choice;
+        
+        switch(choice){
+            case 1:
+              for(int i=0;i<numberOfFlights;i++){
+                cout<<flights[i]<<endl;
+                 if(isAvailable[i]){
+                    cout<<"available"<<endl;}
+                else{
+                    cout<<"not avilable"<<endl;
+                }
+                 cout<<endl;
+              }
+            case 2:
+            string flightNumber;
+               cout<<"enter flightNumber"<<endl;
+               cin>>flightNumber;
+               bool found=false;
+               for(int i=0;i<numberOfFlights;i++){
+                if(flights[i]==flightNumber){
+                    found=true;
+                    cout<<"\n flight number "<<flights[i]<<endl;
+                    cout<<"\n destinatio "<<destinations[i]<<endl;
+                    cout<<"\n dedpatureTime  "<<depatureTimes[i]<<endl;
+                        if(isAvailable[i]){
+                            cout<<"status: available"<<endl;}
+                        else{
+                            cout<<"status: not available"<<endl;
+                        }
+                        break;}
+                if (!found){
+                    cout<<"flight number not found"<<endl;
+
+                }    
+                else if (choice==0) {
+                    cout<<"exiting the program "<<endl;
+                    break;
+                }  
+                else{
+                    cout<<"invalid input"<<endl;
+                }
+
+                        }
+                        
+                      
+                        }
+                }
+             return 0;  }
