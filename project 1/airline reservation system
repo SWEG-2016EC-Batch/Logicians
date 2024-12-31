@@ -22,16 +22,7 @@ int main() {
         cin >> choice;
         cin.ignore(); 
 
-        if (choice == 1) {
-          
-            if (passengerCount < totalPassengers) {
-                cout << "Enter passenger name: ";
-                getline(cin, passengerNames[passengerCount]);
-                passengerCount++;
-                cout << "Passenger added successfully!" << endl;
-            } else {
-                cout << "Passenger list is full!" << endl;
-            }
+       
         } else if (choice == 2) {
             // Search Passenger by Name
             cout << "Enter the name of the passenger to search: ";
