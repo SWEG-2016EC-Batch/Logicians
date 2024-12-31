@@ -244,3 +244,128 @@ int main() {
     return 0;
 }
 }
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    const int totalPassengers = 100; // Change this to handle more passengers
+    const int numberOfFlights = 5;
+    
+    string passengerNames[totalPassengers];
+    int passengerCount = 0;
+    int choice;
+    string searchName;
+    
+    string flights[numberOfFlights] = {"a1", "a2", "a3", "a4", "a5"};
+    string destinations[numberOfFlights] = {"Addis", "Adama", "Harar", "Gonder", "Jijiga"};
+    string departureTimes[numberOfFlights] = {"07:00", "08:00", "09:00am", "06:00", "09:30am"};
+    bool isAvailable[numberOfFlights] = {true, false, true, true, false};
+    
+    while (true) {
+        // Display main menu
+        cout << "1. Passenger Management" << endl;
+        cout << "2. Flight Information" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore(); // Clear input buffer
+        
+        if (choice == 1) {
+            int passengerChoice;
+            cout << "1. Add Passenger" << endl;
+            cout << "2. Search Passenger by Name" << endl;
+            cout << "3. Display All Passengers" << endl;
+            cout << "Enter your choice: ";
+            cin >> passengerChoice;
+            cin.ignore(); // Clear input buffer
+            
+            if (passengerChoice == 1) {
+                // Add Passenger
+                if (passengerCount < totalPassengers) {
+                    cout << "Enter passenger name: ";
+                    getline(cin, passengerNames[passengerCount]);
+                    passengerCount++;
+                    cout << "Passenger added successfully!" << endl;
+                } else {
+                    cout << "Passenger list is full!" << endl;
+                }
+            } else if (passengerChoice == 2) {
+                // Search Passenger by Name
+                cout << "Enter the name of the passenger to search: ";
+                getline(cin, searchName);
+                bool found = false;
+                for (int i = 0; i < passengerCount; i++) {
+                    if (passengerNames[i] == searchName) {
+                        cout << "Passenger " << searchName << " found to reserve a seat at order " << i + 1 << "." << endl;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    cout << "Passenger " << searchName << " not found." << endl;
+                }
+            } else if (passengerChoice == 3) {
+                // Display All Passengers
+                cout << "Passenger List:" << endl;
+                for (int i = 0; i < passengerCount; i++) {
+                    cout << i + 1 << ". " << passengerNames[i] << endl;
+                }
+            } else {
+                cout << "Invalid choice. Please try again." << endl;
+            }
+        } else if (choice == 2) {
+            int flightChoice;
+            cout << "1. View All Flights" << endl;
+            cout << "2. Flight Details" << endl;
+            cout << "Enter your choice: ";
+            cin >> flightChoice;
+            cin.ignore(); // Clear input buffer
+            
+            if (flightChoice == 1) {
+                // View All Flights
+                cout << "***** Flight Information *****" << endl;
+                for (int i = 0; i < numberOfFlights; i++) {
+                    cout << "Flight " << flights[i] << " - " << (isAvailable[i] ? "Available" : "Not Available") << endl;
+                }
+                cout << endl; // Added break here
+                continue; // Prevents falling through the next case
+            } else if (flightChoice == 2) {
+                // Flight Details
+                string flightNumber;
+                cout << "Enter flight number: ";
+                cin >> flightNumber;
+                bool found = false;
+                for (int i = 0; i < numberOfFlights; i++) {
+                    if (flights[i] == flightNumber) {
+                        found = true;
+                        cout << "\nFlight Number: " << flights[i] << endl;
+                        cout << "Destination: " << destinations[i] << endl;
+                        cout << "Departure Time: " << departureTimes[i] << endl;
+                        cout << "Status: " << (isAvailable[i] ? "Available" : "Not Available") << endl;
+                        break;
+                    }
+                }
+                if (!found) {
+                    cout << "Flight number not found." << endl;
+                }
+                cout << endl; // Added break here
+                continue; // Prevents falling through the next case
+            } else {
+                cout << "Invalid choice. Please try again." << endl;
+            }
+        } else if (choice == 3) {
+            // Exit
+            cout << "Exiting..." << endl;
+            break;
+        } else {
+            cout << "Invalid choice. Please try again." << endl;
+        }
+        cout << endl; // Ensure there's a break after each switch case
+    }
+
+    return 0;
+}
+
