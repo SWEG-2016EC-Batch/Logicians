@@ -1,7 +1,7 @@
     #include <iostream>
 #include <string>
 
-using namespace std
+using namespace std;
 
 int main() {
     const int totalPassengers = 100;  // Change this to handle more passengers
