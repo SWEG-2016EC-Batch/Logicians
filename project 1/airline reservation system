@@ -208,5 +208,31 @@ int main() {
         }
     } while (menu!= 3);
 
+   cout << "\nFlight Number: " << flights[i] << endl;
+                        cout << "Destination: " << destinations[i] << endl;
+                        cout << "Departure Time: " << departureTimes[i] << endl;
+                        cout << "Status: " << (isAvailable[i] ? "Available" : "Not Available") << endl;
+                        break;
+                    }
+                }
+                if (!found) {
+                    cout << "Flight number not found." << endl;
+                }
+                cout << endl; // Added break here
+                continue; // Prevents falling through the next case
+            } else {
+                cout << "Invalid choice. Please try again." << endl;
+            }
+        } else if (choice == 3) {
+            // Exit
+            cout << "Exiting..." << endl;
+            break;
+        } else {
+            cout << "Invalid choice. Please try again." << endl;
+        }
+        cout << endl; // Ensure there's a break after each switch case
+    }
+
     return 0;
+}
 }
