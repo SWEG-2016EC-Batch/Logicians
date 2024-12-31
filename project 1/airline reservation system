@@ -140,3 +140,82 @@ int main(){
                         }
                 }
              return 0;  }
+
+
+
+
+
+//occupacy
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+const int ROWS = 100; 
+const int COLUMNS = 4; 
+
+
+int main() {
+    char seats[ROWS][COLUMNS];
+    for (int i = 0; i < ROWS; ++i) {
+        for (int j = 0; j < COLUMNS; ++j) {
+            seats[i][j] = 'O'; 
+        }
+    }
+
+    int menu;
+    a:
+    do {
+        cout << "\n1. Display Seat Occupancy\n";
+        cout << "2. Book a Seat\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> menu;
+
+        switch (menu) {
+            case 1:
+                cout << "Seat Occupancy Status:\n";
+    for (int i = 0; i < ROWS; ++i) {
+        for (int j = 0; j < COLUMNS; ++j) {
+            cout << seats[i][j] << " ";
+        }
+        cout << endl;
+    }
+                break;
+            case 2: {
+                b:
+                int row, column;
+                cout << "Enter row number of seat (1-" << ROWS << "): ";
+                cin >> row;
+                cout << "Enter column number of seat (1-" << COLUMNS << "): ";
+                cin >> column;
+   
+    if (row >= 0 && row < ROWS && column >= 0 && column < COLUMNS) {
+        if (seats[row][column] == 'O') {
+            seats[row][column] = 'X';
+            cout << "The Seat booked successfully.\n";
+        } else {
+            cout << "This Seat already booked.\n";
+        }
+    } else {
+        cout << "Your seat selection is invalid  please try to select valid seat number.\n";
+        cin.clear();
+                cin.ignore();
+                goto b;
+        
+    }
+                break;
+            }
+            case 3:
+                cout << "The programm Exiting...\n";
+                break;
+            default:
+                cout << "Invalid choice. Please try to choose the correct menu number again.\n";
+                cin.clear();
+                cin.ignore();
+                goto a;
+        }
+    } while (menu!= 3);
+
+    return 0;
+}
