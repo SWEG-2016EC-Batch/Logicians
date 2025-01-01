@@ -344,7 +344,7 @@ int main() {
 			}
 		} else {
 			cout << "Invalid option. Please type 1 for First Class, 2 for Economy, 3 to see available and occupied seats, 4 to cancel a reservation, or 5 to search for a passenger by name." << endl;
-		}
+		
 	}
 
 	return 0;
