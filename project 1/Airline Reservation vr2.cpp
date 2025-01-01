@@ -21,6 +21,7 @@ int main() {
         cout << "Please type 3 to see available and occupied seats" << endl;
         cout << "Please type 4 to cancel a reservation" << endl;
         cout << "Please type 5 to search for a passenger by name" << endl;
+        cout << "Please type 6 to exit the program" << endl;
         cin >> choice;
 
         if (choice == 1 || choice == 2) {
@@ -44,13 +45,11 @@ int main() {
                     cout << "Enter your sex: ";
                     b:
                     cin >> sex;
-                    
 
                     if (sex != 'M' && sex != 'F') { // Validate gender input
-                        cout << "That is not a valid gender! Try To insert captital letter M for male capital letter F for female" << endl;
+                        cout << "That is not a valid gender! Try To insert capital letter M for male, capital letter F for female." << endl;
                         goto b;
                     }
-                   
 
                     cout << "Enter your age: ";
                     c:
@@ -67,12 +66,12 @@ int main() {
                     d:
                     getline(cin, passportNumber);
                     for (char c : passportNumber) {
-                        if (!isalnum(c)) {// passport number only can be Alphabet and numbers
+                        if (!isalnum(c)) { // passport number only can be Alphabet and numbers
                             cout << "A Passport number can only contain alphabets and numbers! Please try again." << endl;
                             goto d;
                         }
                     }
-                    if (passportNumber.length() != 6) {// passport number size (length) must be 6
+                    if (passportNumber.length() != 6) { // passport number size (length) must be 6
                         cout << "Invalid Passport number size, must be exactly 6. Please enter again: " << endl;
                         goto d;
                     }
@@ -110,8 +109,8 @@ int main() {
             seatType = (seatNumber <= 30) ? 0 : 1;
             int seatIndex = (seatType == 0) ? seatNumber - 1 : seatNumber - 31;
 
-            if (seats[seatType][seatIndex] && passengerDetails[seatType][seatIndex][2] == passportNumber) 
-                {seats[seatType][seatIndex] = false;
+            if (seats[seatType][seatIndex] && passengerDetails[seatType][seatIndex][2] == passportNumber) {
+                seats[seatType][seatIndex] = false;
                 passengerDetails[seatType][seatIndex][0].clear();
                 passengerDetails[seatType][seatIndex][1].clear();
                 passengerDetails[seatType][seatIndex][2].clear();
@@ -151,8 +150,11 @@ int main() {
             if (!passengerFound) {
                 cout << "Passenger not found." << endl;
             }
+        } else if (choice == 6) {
+            cout << "Exiting the program. Thank you for using the Airline Reservation System!" << endl;
+            break;
         } else {
-            cout << "Invalid option. Please type 1 for First Class, 2 for Economy, 3 to see available and occupied seats, 4 to cancel a reservation, or 5 to search for a passenger by name." << endl;
+            cout << "Invalid option. Please type 1 for First Class, 2 for Economy, 3 to see available and occupied seats, 4 to cancel a reservation, 5 to search for a passenger by name, or 6 to exit the program." << endl;
         }
     }
 
