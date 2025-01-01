@@ -350,4 +350,4 @@ int main() {
 
 	return 0;
 }
-if bkle the rejim code bigebas
+
