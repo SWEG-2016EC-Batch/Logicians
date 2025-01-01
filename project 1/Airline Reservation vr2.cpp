@@ -61,9 +61,9 @@ int main() {
                         cin.ignore(1000, '\n');
                         goto c;
                     }
-
+                    cin.ignore(1000, '\n');
                     cout << "Enter your passport number: ";
-                    cin.ignore();
+                   
                     d:
                     getline(cin, passportNumber);
                     for (char c : passportNumber) {
