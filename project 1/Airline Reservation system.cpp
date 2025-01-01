@@ -21,6 +21,7 @@ int main() {
 		cout << "Please type 3 to see available and Occupied seat" << endl;
 		cout << "Please type 4 to cancel a reservation" << endl;
 		cout << "Please type 5 to search for a passenger by name" << endl;
+		cout << "Please type 6 to exit the program" << endl;
 		cin >> choice;
 
 		if (choice == 1) {
@@ -30,7 +31,7 @@ int main() {
 					firstClassSeats[i] = true;
 					cout << "Enter your name: ";
 					cin.ignore();
-                    a:
+a:
 					getline(cin, name);
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
@@ -39,7 +40,7 @@ int main() {
 						}
 					}
 					cout << "Enter your sex: ";
-                    b:
+b:
 					cin>>gender;
 					if (islower(gender)) { // Convert lowercase to uppercase
 						gender = toupper(gender);
@@ -50,7 +51,7 @@ int main() {
 						goto b;
 					}
 					cout << "Enter your age: ";
-                    c:
+c:
 					cin >> age;
 					if (cin.fail() || age < 0 ) {
 						cout << "Invalid age! Please enter a valid age again ";
@@ -61,7 +62,7 @@ int main() {
 
 					cout << "Enter your passport number: ";
 					cin.ignore();
-                    d:
+d:
 					getline(cin, passportNumber);
 					for (char c : passportNumber) {
 						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
@@ -69,7 +70,7 @@ int main() {
 							goto d;
 						}
 					}
-					if (passportNumber.length() !=6) {// passport number  size(length) must be 6 
+					if (passportNumber.length() !=6) {// passport number  size(length) must be 6
 						cout << "Invalid Passport number size must be exactly 6 enter again"<<endl;
 						goto d;
 					}
@@ -91,50 +92,50 @@ int main() {
 						if (!economySeats[i]) {
 							economySeats[i] = true;
 							cout << "Enter your name: ";
-					cin.ignore();
-                    e:
-					getline(cin, name);
-					for (char c : name) {
-						if (!isalpha(c) && !isspace(c)) {
-							cout << "A name can only contain alphabets and spaces! Please try again." << endl;
-							goto e;
-						}
-					}
-					cout << "Enter your sex: ";
-                    f:
-					cin>>gender;
-					if (islower(gender)) { // Convert lowercase to uppercase
-						gender = toupper(gender);
-					}
+							cin.ignore();
+e:
+							getline(cin, name);
+							for (char c : name) {
+								if (!isalpha(c) && !isspace(c)) {
+									cout << "A name can only contain alphabets and spaces! Please try again." << endl;
+									goto e;
+								}
+							}
+							cout << "Enter your sex: ";
+f:
+							cin>>gender;
+							if (islower(gender)) { // Convert lowercase to uppercase
+								gender = toupper(gender);
+							}
 
-					if (gender != 'M' && gender != 'F' ) { // Validate gender input
-						cout << "That is not a valid gender! Enter again" << endl;
-						goto f;
-					}
-					cout << "Enter your age: ";
-                    g:
-					cin >> age;
-					if (cin.fail() || age < 0 ) {
-						cout << "Invalid age! Please enter a valid age again ";
-						cin.clear();
-						cin.ignore(10000,'\n');
-						goto g;
-					}
+							if (gender != 'M' && gender != 'F' ) { // Validate gender input
+								cout << "That is not a valid gender! Enter again" << endl;
+								goto f;
+							}
+							cout << "Enter your age: ";
+g:
+							cin >> age;
+							if (cin.fail() || age < 0 ) {
+								cout << "Invalid age! Please enter a valid age again ";
+								cin.clear();
+								cin.ignore(10000,'\n');
+								goto g;
+							}
 
-					cout << "Enter your passport number: ";
-					cin.ignore();
-                    h:
-					getline(cin, passportNumber);
-					for (char c : passportNumber) {
-						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
-							cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
-							goto h;
-						}
-					}
-					if (passportNumber.length() !=6) {// passport number  size(length) must be 6 
-						cout << "Invalid Passport number size must be exactly 6 enter again"<<endl;
-						goto h;
-					}
+							cout << "Enter your passport number: ";
+							cin.ignore();
+h:
+							getline(cin, passportNumber);
+							for (char c : passportNumber) {
+								if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
+									cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
+									goto h;
+								}
+							}
+							if (passportNumber.length() !=6) {// passport number  size(length) must be 6
+								cout << "Invalid Passport number size must be exactly 6 enter again"<<endl;
+								goto h;
+							}
 
 							economyPassengerDetails[i] = name;
 
@@ -158,7 +159,7 @@ int main() {
 					economySeats[i] = true;
 					cout << "Enter your name: ";
 					cin.ignore();
-                    i:
+i:
 					getline(cin, name);
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
@@ -167,7 +168,7 @@ int main() {
 						}
 					}
 					cout << "Enter your sex: ";
-                    j:
+j:
 					cin>>gender;
 					if (islower(gender)) { // Convert lowercase to uppercase
 						gender = toupper(gender);
@@ -178,7 +179,7 @@ int main() {
 						goto j;
 					}
 					cout << "Enter your age: ";
-                    k:
+k:
 					if (cin.fail() || age < 0 ) {
 						cout << "Invalid age! Please enter a valid age again ";
 						cin.clear();
@@ -188,7 +189,7 @@ int main() {
 
 					cout << "Enter your passport number: ";
 					cin.ignore();
-                    l:
+l:
 					getline(cin, passportNumber);
 					for (char c : passportNumber) {
 						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
@@ -196,7 +197,7 @@ int main() {
 							goto l;
 						}
 					}
-					if (passportNumber.length() !=6) {// passport number  size(length) must be 6 
+					if (passportNumber.length() !=6) {// passport number  size(length) must be 6
 						cout << "Invalid Passport number size must be exactly 6 enter again"<<endl;
 						goto l;
 					}
@@ -216,51 +217,51 @@ int main() {
 					for (int i = 0; i < 30; ++i) {
 						if (!firstClassSeats[i]) {
 							firstClassSeats[i] = true;
-								cout << "Enter your name: ";
-					cin.ignore();
-                    m:
-					getline(cin, name);
-					for (char c : name) {
-						if (!isalpha(c) && !isspace(c)) {
-							cout << "A name can only contain alphabets and spaces! Please try again." << endl;
-							goto m;
-						}
-					}
-					cout << "Enter your sex: ";
-                    n:
-					cin>>gender;
-					if (islower(gender)) { // Convert lowercase to uppercase
-						gender = toupper(gender);
-					}
+							cout << "Enter your name: ";
+							cin.ignore();
+m:
+							getline(cin, name);
+							for (char c : name) {
+								if (!isalpha(c) && !isspace(c)) {
+									cout << "A name can only contain alphabets and spaces! Please try again." << endl;
+									goto m;
+								}
+							}
+							cout << "Enter your sex: ";
+n:
+							cin>>gender;
+							if (islower(gender)) { // Convert lowercase to uppercase
+								gender = toupper(gender);
+							}
 
-					if (gender != 'M' && gender != 'F' ) { // Validate gender input
-						cout << "That is not a valid gender! Enter again" << endl;
-						goto n;
-					}
-					cout << "Enter your age: ";
-                    o:
-					cin >> age;
-					if (cin.fail() || age < 0 ) {
-						cout << "Invalid age! Please enter a valid age again ";
-						cin.clear();
-						cin.ignore(10000,'\n');
-						goto o;
-					}
+							if (gender != 'M' && gender != 'F' ) { // Validate gender input
+								cout << "That is not a valid gender! Enter again" << endl;
+								goto n;
+							}
+							cout << "Enter your age: ";
+o:
+							cin >> age;
+							if (cin.fail() || age < 0 ) {
+								cout << "Invalid age! Please enter a valid age again ";
+								cin.clear();
+								cin.ignore(10000,'\n');
+								goto o;
+							}
 
-					cout << "Enter your passport number: ";
-					cin.ignore();
-                    p:
-					getline(cin, passportNumber);
-					for (char c : passportNumber) {
-						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
-							cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
-							goto p;
-						}
-					}
-					if (passportNumber.length() !=6) {// passport number  size(length) must be 6 
-						cout << "Invalid Passport number size must be exactly 6 enter again"<<endl;
-						goto p;
-					}
+							cout << "Enter your passport number: ";
+							cin.ignore();
+p:
+							getline(cin, passportNumber);
+							for (char c : passportNumber) {
+								if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
+									cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
+									goto p;
+								}
+							}
+							if (passportNumber.length() !=6) {// passport number  size(length) must be 6
+								cout << "Invalid Passport number size must be exactly 6 enter again"<<endl;
+								goto p;
+							}
 							firstClassPassengerDetails[i] = name;
 
 							cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
@@ -342,6 +343,9 @@ int main() {
 			if (!passengerFound) {
 				cout << "Passenger not found." << endl;
 			}
+		} else if (choice == 6) {
+			cout << "Exiting the program. Thank you for using the Airline Reservation System!" << endl;
+			break;
 		} else {
 			cout << "Invalid option. Please type 1 for First Class, 2 for Economy, 3 to see available and occupied seats, 4 to cancel a reservation, or 5 to search for a passenger by name." << endl;
 		}
