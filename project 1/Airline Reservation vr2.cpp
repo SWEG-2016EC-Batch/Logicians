@@ -71,7 +71,7 @@ int main() {
                             goto d;
                         }
                     }
-                    if (passportNumber.length() != 6) { // passport number size (length) must be 6
+                    if (passportNumber.length() != 9) { // passport number size (length) must be 9
                         cout << "Invalid Passport number size, must be exactly 6. Please enter again: " << endl;
                         goto d;
                     }
