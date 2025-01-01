@@ -160,3 +160,4 @@ int main() {
 
     return 0;
 }
+rejimu code bigeba tiru nbr
