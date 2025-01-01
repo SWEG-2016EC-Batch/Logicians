@@ -1,363 +1,213 @@
-   #include <iostream>
+#include <iostream>
 #include <string>
 
 using namespace std;
 
-    #include <iostream>
-#include <string>
-
-using namespace std;
+bool firstClassSeats[30] = {false};
+bool economySeats[70] = {false};
+string firstClassPassengerDetails[30];
+string economyPassengerDetails[70];
 
 int main() {
-    const int totalPassengers = 100; // Change this to handle more passengers
-    string passengerNames[totalPassengers];
-    int passengerCount = 0;
-    int choice;
-    string searchName;
+    int choice,age;
+    string name, sex, passportNumber;
+    
+    cout << "Welcome to Logicians Airline Reservation System!" << endl; 
 
     while (true) {
-        // Display menu for this option
-        cout << "Airline Seat Reservation System" << endl;
-        cout << "1. Add Passenger" << endl;
-        cout << "2. Search Passenger by Name" << endl;
-        cout << "3. Display All Passengers" << endl;
-        cout << "4. Exit" << endl;
-        cout << "Enter your choice: ";
+        cout << "Please type 1 for First Class" << endl;
+        cout << "Please type 2 for Economy" << endl;
+        cout << "Please type 3 to see available and Occupied seat" << endl;
+        cout << "Please type 4 to cancel a reservation" << endl;
+        cout << "Please type 5 to search for a passenger by name" << endl;
         cin >> choice;
-        cin.ignore(); 
 
         if (choice == 1) {
-          
-           else if (choice == 2) {
-            // Search Passenger by Name
-            cout << "Enter the name of the passenger to search: ";
-            getline(cin, searchName);
-            bool found = false;
-            for (int i = 0; i < passengerCount; i++) {
-                if (passengerNames[i] == searchName) {
-                    cout << "Passenger " << searchName << " found to reserve a seat at order " << i+1 << "." << endl;
-                    found = true;
+            bool seatAssigned = false;
+            for (int i = 0; i < 30; ++i) {
+                if (!firstClassSeats[i]) {
+                    firstClassSeats[i] = true;
+                    cout << "Enter your name: ";
+                    cin.ignore();
+                    getline(cin, name);
+                    cout << "Enter your sex: ";
+                    getline(cin, sex);
+                    cout << "Enter your age: ";
+                    cin >> age;
+                    cout << "Enter your passport number: ";
+                    cin.ignore();
+                    getline(cin, passportNumber);
+
+                    firstClassPassengerDetails[i] = name;
+
+                    cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
+                    cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
+                    seatAssigned = true;
                     break;
                 }
             }
-            if (!found) {
-                cout << "Passenger " << searchName << " not found." << endl;
-            }
-        } else if (choice == 3) {
-            // Display All Passengers
-            cout << "Passenger List:" << endl;
-            for (int i = 0; i < passengerCount; i++) {
-                cout << i + 1 << ". " << passengerNames[i] << endl;
-            }
-        } else if (choice == 4) {
-           
-            cout << "Exiting..." << endl;
-            break;
-        } else {
-            cout << "Invalid choice. Please try again." << endl;
-        }
-        cout << endl; 
-    }
+            if (!seatAssigned) {
+                cout << "First Class is fully booked. Would you like to be placed in Economy? (yes/no): ";
+                string response;
+                cin >> response;
+                if (response == "yes") {
+                    for (int i = 0; i < 70; ++i) {
+                        if (!economySeats[i]) {
+                            economySeats[i] = true;
+                            cout << "Enter your name: ";
+                            cin.ignore();
+                            getline(cin, name);
+                            cout << "Enter your sex: ";
+                            getline(cin, sex);
+                            cout << "Enter your age: ";
+                            cin >> age;
+                            cout << "Enter your passport number: ";
+                            cin.ignore();
+                            getline(cin, passportNumber);
 
-    return 0;
-}
+                            economyPassengerDetails[i] = name;
 
-
-
-
-//my part
-#include <iostream>
-#include <string>
-using namespace std;
-int main(){
-    int choice;
-    const int numberOfFlights=5;
-    string flights[numberOfFlights]={"a1","a2","a3","a4","a5"};
-     string destinations[numberOfFlights]={"addis","Adama","harar"," gonder","jijiga"};
-     string depatureTimes[numberOfFlights]={"07:00","08:00","09:00am","06:00","09;30am"};
-     bool  isAvailable[numberOfFlights]={true,false,true,true,false};                      
-    while(true){
-
-        cout<<" *****flight information***** "<<endl;
-        cout<<"1.view all flights"<<endl;
-        cout<<"2.flight details"<<endl;
-        cout<<"0.exit"<<endl;
-        cout<<"eneter your choice"<<endl;
-        cin>>choice;
-        
-        switch(choice){
-            case 1:
-              for(int i=0;i<numberOfFlights;i++){
-                cout<<flights[i]<<endl;
-                 if(isAvailable[i]){
-                    cout<<"available"<<endl;}
-                else{
-                    cout<<"not avilable"<<endl;
-                }
-                 cout<<endl;
-              }
-            case 2:
-            string flightNumber;
-               cout<<"enter flightNumber"<<endl;
-               cin>>flightNumber;
-               bool found=false;
-               for(int i=0;i<numberOfFlights;i++){
-                if(flights[i]==flightNumber){
-                    found=true;
-                    cout<<"\n flight number "<<flights[i]<<endl;
-                    cout<<"\n destinatio "<<destinations[i]<<endl;
-                    cout<<"\n dedpatureTime  "<<depatureTimes[i]<<endl;
-                        if(isAvailable[i]){
-                            cout<<"status: available"<<endl;}
-                        else{
-                            cout<<"status: not available"<<endl;
+                            cout << "Boarding Pass: Seat " << (i + 31) << ", Economy" << endl;
+                            cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
+                            seatAssigned = true;
+                            break;
                         }
-                        break;}
-                if (!found){
-                    cout<<"flight number not found"<<endl;
-
-                }    
-                else if (choice==0) {
-                    cout<<"exiting the program "<<endl;
-                    break;
-                }  
-                else{
-                    cout<<"invalid input"<<endl;
-                }
-
-                        }
-                        
-                      
-                        }
-                }
-             return 0;  }
-
-
-
-
-
-//occupacy
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-const int ROWS = 100; 
-const int COLUMNS = 4; 
-
-
-int main() {
-    char seats[ROWS][COLUMNS];
-    for (int i = 0; i < ROWS; ++i) {
-        for (int j = 0; j < COLUMNS; ++j) {
-            seats[i][j] = 'O'; 
-        }
-    }
-
-    int menu;
-    a:
-    do {
-        cout << "\n1. Display Seat Occupancy\n";
-        cout << "2. Book a Seat\n";
-        cout << "3. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> menu;
-
-        switch (menu) {
-            case 1:
-                cout << "Seat Occupancy Status:\n";
-    for (int i = 0; i < ROWS; ++i) {
-        for (int j = 0; j < COLUMNS; ++j) {
-            cout << seats[i][j] << " ";
-        }
-        cout << endl;
-    }
-                break;
-            case 2: {
-                b:
-                int row, column;
-                cout << "Enter row number of seat (1-" << ROWS << "): ";
-                cin >> row;
-                cout << "Enter column number of seat (1-" << COLUMNS << "): ";
-                cin >> column;
-   
-    if (row >= 0 && row < ROWS && column >= 0 && column < COLUMNS) {
-        if (seats[row][column] == 'O') {
-            seats[row][column] = 'X';
-            cout << "The Seat booked successfully.\n";
-        } else {
-            cout << "This Seat already booked.\n";
-        }
-    } else {
-        cout << "Your seat selection is invalid  please try to select valid seat number.\n";
-        cin.clear();
-                cin.ignore();
-                goto b;
-        
-    }
-                break;
-            }
-            case 3:
-                cout << "The programm Exiting...\n";
-                break;
-            default:
-                cout << "Invalid choice. Please try to choose the correct menu number again.\n";
-                cin.clear();
-                cin.ignore();
-                goto a;
-        }
-    } while (menu!= 3);
-
-   cout << "\nFlight Number: " << flights[i] << endl;
-                        cout << "Destination: " << destinations[i] << endl;
-                        cout << "Departure Time: " << departureTimes[i] << endl;
-                        cout << "Status: " << (isAvailable[i] ? "Available" : "Not Available") << endl;
-                        break;
                     }
-                }
-                if (!found) {
-                    cout << "Flight number not found." << endl;
-                }
-                cout << endl; // Added break here
-                continue; // Prevents falling through the next case
-            } else {
-                cout << "Invalid choice. Please try again." << endl;
-            }
-        } else if (choice == 3) {
-            // Exit
-            cout << "Exiting..." << endl;
-            break;
-        } else {
-            cout << "Invalid choice. Please try again." << endl;
-        }
-        cout << endl; // Ensure there's a break after each switch case
-    }
-
-    return 0;
-}
-}
-
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    const int totalPassengers = 100; // Change this to handle more passengers
-    const int numberOfFlights = 5;
-    
-    string passengerNames[totalPassengers];
-    int passengerCount = 0;
-    int choice;
-    string searchName;
-    
-    string flights[numberOfFlights] = {"a1", "a2", "a3", "a4", "a5"};
-    string destinations[numberOfFlights] = {"Addis", "Adama", "Harar", "Gonder", "Jijiga"};
-    string departureTimes[numberOfFlights] = {"07:00", "08:00", "09:00am", "06:00", "09:30am"};
-    bool isAvailable[numberOfFlights] = {true, false, true, true, false};
-    
-    while (true) {
-        // Display main menu
-        cout << "1. Passenger Management" << endl;
-        cout << "2. Flight Information" << endl;
-        cout << "3. Exit" << endl;
-        cout << "Enter your choice: ";
-        cin >> choice;
-        cin.ignore(); // Clear input buffer
-        
-        if (choice == 1) {
-            int passengerChoice;
-            cout << "1. Add Passenger" << endl;
-            cout << "2. Search Passenger by Name" << endl;
-            cout << "3. Display All Passengers" << endl;
-            cout << "Enter your choice: ";
-            cin >> passengerChoice;
-            cin.ignore(); // Clear input buffer
-            
-            if (passengerChoice == 1) {
-                // Add Passenger
-                if (passengerCount < totalPassengers) {
-                    cout << "Enter passenger name: ";
-                    getline(cin, passengerNames[passengerCount]);
-                    passengerCount++;
-                    cout << "Passenger added successfully!" << endl;
+                    if (!seatAssigned) {
+                        cout << "Sorry, Economy is also fully booked. Next flight leaves in 3 hours." << endl;
+                    }
                 } else {
-                    cout << "Passenger list is full!" << endl;
+                    cout << "Next flight leaves in 3 hours." << endl;
                 }
-            } else if (passengerChoice == 2) {
-                // Search Passenger by Name
-                cout << "Enter the name of the passenger to search: ";
-                getline(cin, searchName);
-                bool found = false;
-                for (int i = 0; i < passengerCount; i++) {
-                    if (passengerNames[i] == searchName) {
-                        cout << "Passenger " << searchName << " found to reserve a seat at order " << i + 1 << "." << endl;
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    cout << "Passenger " << searchName << " not found." << endl;
-                }
-            } else if (passengerChoice == 3) {
-                // Display All Passengers
-                cout << "Passenger List:" << endl;
-                for (int i = 0; i < passengerCount; i++) {
-                    cout << i + 1 << ". " << passengerNames[i] << endl;
-                }
-            } else {
-                cout << "Invalid choice. Please try again." << endl;
             }
         } else if (choice == 2) {
-            int flightChoice;
-            cout << "1. View All Flights" << endl;
-            cout << "2. Flight Details" << endl;
-            cout << "Enter your choice: ";
-            cin >> flightChoice;
-            cin.ignore(); // Clear input buffer
-            
-            if (flightChoice == 1) {
-                // View All Flights
-                cout << "***** Flight Information *****" << endl;
-                for (int i = 0; i < numberOfFlights; i++) {
-                    cout << "Flight " << flights[i] << " - " << (isAvailable[i] ? "Available" : "Not Available") << endl;
+            bool seatAssigned = false;
+            for (int i = 0; i < 70; ++i) {
+                if (!economySeats[i]) {
+                    economySeats[i] = true;
+                    cout << "Enter your name: ";
+                    cin.ignore();
+                    getline(cin, name);
+                    cout << "Enter your sex: ";
+                    getline(cin, sex);
+                    cout << "Enter your age: ";
+                    cin >> age;
+                    cout << "Enter your passport number: ";
+                    cin.ignore();
+                    getline(cin, passportNumber);
+
+                    economyPassengerDetails[i] = name;
+
+                    cout << "Boarding Pass: Seat " << (i + 31) << ", Economy" << endl;
+                    cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
+                    seatAssigned = true;
+                    break;
                 }
-                cout << endl; // Added break here
-                continue; // Prevents falling through the next case
-            } else if (flightChoice == 2) {
-                // Flight Details
-                string flightNumber;
-                cout << "Enter flight number: ";
-                cin >> flightNumber;
-                bool found = false;
-                for (int i = 0; i < numberOfFlights; i++) {
-                    if (flights[i] == flightNumber) {
-                        found = true;
-                        cout << "\nFlight Number: " << flights[i] << endl;
-                        cout << "Destination: " << destinations[i] << endl;
-                        cout << "Departure Time: " << departureTimes[i] << endl;
-                        cout << "Status: " << (isAvailable[i] ? "Available" : "Not Available") << endl;
+            }
+            if (!seatAssigned) {
+                cout << "Economy is fully booked. Would you like to be placed in First Class? (yes/no): ";
+                string response;
+                cin >> response;
+                if (response == "yes") {
+                    for (int i = 0; i < 30; ++i) {
+                        if (!firstClassSeats[i]) {
+                            firstClassSeats[i] = true;
+                            cout << "Enter your name: ";
+                            cin.ignore();
+                            getline(cin, name);
+                            cout << "Enter your sex: ";
+                            getline(cin, sex);
+                            cout << "Enter your age: ";
+                            cin >> age;
+                            cout << "Enter your passport number: ";
+                            cin.ignore();
+                            getline(cin, passportNumber);
+
+                            firstClassPassengerDetails[i] = name;
+
+                            cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
+                            cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
+                            seatAssigned = true;
+                            break;
+                        }
+                    }
+                    if (!seatAssigned) {
+                        cout << "Sorry, First Class is also fully booked. Next flight leaves in 3 hours." << endl;
+                    }
+                } else {
+                    cout << "Next flight leaves in 3 hours." << endl;
+                }
+            }
+        } else if (choice == 3) {
+            cout << "First Class Seat Status:" << endl;
+            for (int i = 0; i < 30; ++i) {
+                cout << "Seat " << i + 1 << ": " << (firstClassSeats[i] ? "Occupied" : "Available") << endl;
+            }
+            cout << "Economy Seat Status:" << endl;
+            for (int i = 0; i < 70; ++i) {
+                cout << "Seat " << i + 31 << ": " << (economySeats[i] ? "Occupied" : "Available") << endl;
+            }
+        } else if (choice == 4) {
+            int seatNumber;
+            string enteredPassportNumber;
+            cout << "Enter your seat number to cancel the reservation: ";
+            cin >> seatNumber;
+            cout << "Enter your passport number: ";
+            cin.ignore();
+            getline(cin, enteredPassportNumber);
+
+            if (seatNumber >= 1 && seatNumber <= 30) {
+                if (firstClassSeats[seatNumber - 1] && firstClassPassengerDetails[seatNumber - 1] == enteredPassportNumber) {
+                    firstClassSeats[seatNumber - 1] = false;
+                    firstClassPassengerDetails[seatNumber - 1].clear();
+                    cout << "Reservation for seat " << seatNumber << " in First Class has been canceled." << endl;
+                } else {
+                    cout << "Invalid seat number or passport number." << endl;
+                }
+            } else if (seatNumber >= 31 && seatNumber <= 100) {
+                if (economySeats[seatNumber - 31] && economyPassengerDetails[seatNumber - 31] == enteredPassportNumber) {
+                    economySeats[seatNumber - 31] = false;
+                    economyPassengerDetails[seatNumber - 31].clear();
+                    cout << "Reservation for seat " << seatNumber << " in Economy has been canceled." << endl;
+                } else {
+                    cout << "Invalid seat number or passport number." << endl;
+                }
+            } else {
+                cout << "Invalid seat number." << endl;
+            }
+        } else if (choice == 5) {
+            cout << "Enter the name of the passenger to search: ";
+            cin.ignore();
+            getline(cin, name);
+            bool passengerFound = false;
+
+            cout << "Searching in First Class..." << endl;
+            for (int i = 0; i < 30; ++i) {
+                if (firstClassPassengerDetails[i] == name) {
+                    cout << "Passenger found in First Class, Seat " << (i + 1) << endl;
+                    passengerFound = true;
+                    break;
+                }
+            }
+
+            if (!passengerFound) {
+                cout << "Searching in Economy..." << endl;
+                for (int i = 0; i < 70; ++i) {
+                    if (economyPassengerDetails[i] == name) {
+                        cout << "Passenger found in Economy, Seat " << (i + 31) << endl;
+                        passengerFound = true;
                         break;
                     }
                 }
-                if (!found) {
-                    cout << "Flight number not found." << endl;
-                }
-                cout << endl; // Added break here
-                continue; // Prevents falling through the next case
-            } else {
-                cout << "Invalid choice. Please try again." << endl;
             }
-        } else if (choice == 3) {
-            // Exit
-            cout << "Exiting..." << endl;
-            break;
+
+            if (!passengerFound) {
+                cout << "Passenger not found." << endl;
+            }
         } else {
-            cout << "Invalid choice. Please try again." << endl;
+            cout << "Invalid option. Please type 1 for First Class, 2 for Economy, 3 to see available and occupied seats, 4 to cancel a reservation, or 5 to search for a passenger by name." << endl;
         }
-        cout << endl; // Ensure there's a break after each switch case
     }
 
     return 0;
 }
-
