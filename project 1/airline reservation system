@@ -21,30 +21,7 @@ int main() {
         cout << "Please type 5 to search for a passenger by name" << endl;
         cin >> choice;
 
-        if (choice == 1) {
-            bool seatAssigned = false;
-            for (int i = 0; i < 30; ++i) {
-                if (!firstClassSeats[i]) {
-                    firstClassSeats[i] = true;
-                    cout << "Enter your name: ";
-                    cin.ignore();
-                    getline(cin, name);
-                    cout << "Enter your sex: ";
-                    getline(cin, sex);
-                    cout << "Enter your age: ";
-                    cin >> age;
-                    cout << "Enter your passport number: ";
-                    cin.ignore();
-                    getline(cin, passportNumber);
-
-                    firstClassPassengerDetails[i] = name;
-
-                    cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
-                    cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
-                    seatAssigned = true;
-                    break;
-                }
-            }
+       
             if (!seatAssigned) {
                 cout << "First Class is fully booked. Would you like to be placed in Economy? (yes/no): ";
                 string response;
