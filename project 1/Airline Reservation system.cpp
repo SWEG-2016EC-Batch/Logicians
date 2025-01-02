@@ -52,7 +52,7 @@ int main() {
 					cout << "Enter your age: ";
                     c:
 					cin >> age;
-					if (cin.fail() || age < 0 ) {
+					if (cin.fail() || age < 0 ) { //Checking proper age
 						cout << "Invalid age! Please enter a valid age again ";
 						cin.clear();
 						cin.ignore(10000,'\n');
@@ -78,7 +78,7 @@ int main() {
 
 					cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
 					cout << "Passenger Details: " << name << ", " << gender << ", " << age << ", " << passportNumber << endl;
-					seatAssigned = true;
+					seatAssigned = true; // This is to check whether the inputs are taken as expected
 					break;
 				}
 			}
@@ -114,7 +114,7 @@ int main() {
 					cout << "Enter your age: ";
                     g:
 					cin >> age;
-					if (cin.fail() || age < 0 ) {
+					if (cin.fail() || age < 0 ) { // age is again checked
 						cout << "Invalid age! Please enter a valid age again ";
 						cin.clear();
 						cin.ignore(10000,'\n');
@@ -263,8 +263,8 @@ int main() {
 						goto p;
 					}
 							firstClassPassengerDetails[i] = name;
-
-							cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
+//then we print the details
+						cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
 							cout << "Passenger Details: " << name << ", " << gender << ", " << age << ", " << passportNumber << endl;
 							seatAssigned = true;
 							break;
