@@ -13,7 +13,9 @@ int main() {
     string name, passportNumber;
     char sex;
 
+    cout << "----------------------------------------------------------" << endl;
     cout << "Welcome to the Airline Reservation System!" << endl;
+    cout << "----------------------------------------------------------" << endl;
 
     while (true) {
         cout << "\nPlease type 1 for First Class" << endl;
@@ -54,7 +56,7 @@ int main() {
                     cout << "Enter your age: ";
                     c:
                     cin >> age;
-                    if (cin.fail() || age < 0) {
+                    if (cin.fail() || age < 0) { // age must be an integer greater than zero
                         cout << "Invalid age! Please enter a valid age again: ";
                         cin.clear();
                         cin.ignore(1000, '\n');
@@ -76,6 +78,7 @@ int main() {
                         goto d;
                     }
 
+                    //the following 4 lines save the inputs in the array
                     passengerDetails[seatType][i][0] = name;
                     passengerDetails[seatType][i][1] = sex;
                     passengerDetails[seatType][i][2] = passportNumber;
@@ -134,7 +137,7 @@ int main() {
                     break;
                 }
             }
-
+            // if there is no one in the seat, then we search in economy
             if (!passengerFound) {
                 cout << "Searching in Economy..." << endl;
                 for (int i = 0; i < 70; ++i) {
@@ -146,7 +149,7 @@ int main() {
                     }
                 }
             }
-
+            // after going through the above process if there is no one, then it means the passanger is not registered.
             if (!passengerFound) {
                 cout << "Passenger not found." << endl;
             }
