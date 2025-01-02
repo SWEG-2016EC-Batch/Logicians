@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 
+// Here we decided to assign 30 seats for first class and 70 seat for the economy.
 bool firstClassSeats[30] = {false};
 bool economySeats[70] = {false};
 string firstClassPassengerDetails[30];
@@ -14,6 +15,7 @@ int main() {
     cout << "Welcome to Logicians Airline Reservation System!" << endl; 
 
     while (true) {
+        // the following is the menu
         cout << "Please type 1 for First Class" << endl;
         cout << "Please type 2 for Economy" << endl;
         cout << "Please type 3 to see available and Occupied seat" << endl;
@@ -38,7 +40,7 @@ int main() {
                     getline(cin, passportNumber);
 
                     firstClassPassengerDetails[i] = name;
-
+                    // after registration the user should see if his info is correctly submitted
                     cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
                     cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
                     seatAssigned = true;
@@ -47,7 +49,7 @@ int main() {
             }
 
        
-            if (!seatAssigned) {
+            if (!seatAssigned) { // we are announcing thet first class is already full so the user should be provided with the choince of ecomomy
                 cout << "First Class is fully booked. Would you like to be placed in Economy? (yes/no): ";
                 string response;
                 cin >> response;
