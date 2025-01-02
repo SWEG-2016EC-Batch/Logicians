@@ -11,7 +11,7 @@ string economyPassengerDetails[70];
 int main() {
 	int choice,age;
 	string name, passportNumber;
-	char gender;
+	char gender; //to take information regarding the person
 
 	cout << "Welcome to Logicians Airline Reservation System!" << endl;
 
