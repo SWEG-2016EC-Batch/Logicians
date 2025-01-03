@@ -14,7 +14,7 @@ int main() {
     char sex;
 
     cout << "----------------------------------------------------------" << endl;
-    cout << "Welcome to the Airline Reservation System!" << endl;
+    cout << "Welcome to the  LOGICIANS Airline Reservation System!" << endl;
     cout << "----------------------------------------------------------" << endl;
 
     while (true) {
