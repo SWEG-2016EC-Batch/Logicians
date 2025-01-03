@@ -34,7 +34,7 @@ This component stores all passenger details, including names, genders, ages, and
 Robust data validation mechanisms are essential to ensure the accuracy of user inputs. The system should validate all fields, such as names, genders, ages, and passport numbers, to prevent incorrect or incomplete information from being processed. Comprehensive error handling should be implemented to manage non-numeric selections, out-of-range values, and invalid data. 
 Clear error messages should guide users to correct their inputs, enhancing the overall user experience.
 
-## Occupancy Status Display
+## Occupancy Status Display:
 
 The system should provide real-time displays of seat occupancy statuses for both First Class and Economy Class. This feature will help airline staff manage reservations effectively, offering insights into which sections are nearing full capacity. It aids in operational planning and decision-making, ensuring that staff can respond quickly to changing reservation dynamics.
 
