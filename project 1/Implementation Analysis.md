@@ -43,7 +43,7 @@ The system should provide real-time displays of seat occupancy statuses for both
 The search functionality allows staff to quickly look up reservations based on passenger names, facilitating efficient customer service. 
 The system should support easy modifications or cancellations of existing bookings, ensuring flexibility and convenience for both passengers and staff.
 
-## Testing and Quality Assurance
+## Testing and Quality Assurance:
 
 Before deploying the system, thorough testing is necessary to ensure that all components function correctly and efficiently. This includes:
 
