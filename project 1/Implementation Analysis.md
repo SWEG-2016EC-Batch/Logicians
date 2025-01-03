@@ -53,7 +53,7 @@ Before deploying the system, thorough testing is necessary to ensure that all co
 
 **User Acceptance Testing (UAT):** Involving real users to test the system in a simulated environment to ensure it meets their needs and expectations.
 
-## Deployment and Maintenance
+## Deployment and Maintenance:
 
 Once testing is complete, the system can be deployed for use by the airline. 
 Regular maintenance and updates will be necessary to address any issues that arise and to ensure the system continues to operate smoothly. 
