@@ -27,7 +27,9 @@ int main() {
 	string name, passportNumber;
 	char gender; //to take information regarding the person
 
-	cout << "Welcome to Logicians Airline Reservation System!" << endl;
+	cout<<"********************************************************"<<endl;
+	cout<<"*   Welcome to Logicians Airline Reservation System!   *" << endl;
+	cout<<"********************************************************"<<endl;
 
 	while (true) {
 		cout << "\nPlease type 1 for First Class" << endl;
