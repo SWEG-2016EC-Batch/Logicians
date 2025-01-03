@@ -9,7 +9,7 @@ Here’s a clear and humanized breakdown of the implementation analysis:
 
 The system design phase involves planning the architecture and components of the system. The main components include the user interface, seat management system, passenger information database, and error handling mechanisms. The design should prioritize simplicity and user-friendliness to ensure that both passengers and airline staff can easily navigate the system.
 
-## User Interface
+## User Interface:
 
 The user interface (UI) is a crucial aspect of the system. It should be designed to be intuitive and easy to use, with clear menus and prompts that guide users through the booking process. 
 The UI should be text-based and menu-driven, providing a step-by-step guide to help users input their preferences and personal information. 
