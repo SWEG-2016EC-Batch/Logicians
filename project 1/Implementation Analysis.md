@@ -15,7 +15,7 @@ The user interface (UI) is a crucial aspect of the system. It should be designed
 The UI should be text-based and menu-driven, providing a step-by-step guide to help users input their preferences and personal information. 
 Visual feedback, such as confirmations of seat selections, should be provided to make the experience engaging and straightforward.
 
-## Seat Management System
+## Seat Management System:
 
 The seat management system is responsible for handling seat assignments, ensuring no double bookings, and managing the occupancy status of seats. It should include:
 
