@@ -25,7 +25,7 @@ The seat management system is responsible for handling seat assignments, ensurin
 
 **Boarding Pass Generation:** Generate a digital boarding pass after a successful reservation.
 
-## Passenger Information Database
+## Passenger Information Database:
 
 This component stores all passenger details, including names, genders, ages, and passport numbers. The database should be designed to ensure data integrity and security. It should also support quick retrieval and updates of passenger information, enabling efficient reservation management and search functionalities.
 
