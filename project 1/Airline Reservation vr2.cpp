@@ -6,13 +6,13 @@
 
 using namespace std;
 
-bool seats[2][100] = {false}; // 0-29: First Class -> row 1, 0-69: Economy -> row 2
+bool seats[2][100] = {false}; // 0-29: First Class -> row 0, 30-99: Economy -> row 1
 string passengerDetails[2][100][3];  // [][0]: Name, [][1]: Sex, [][2]: Passport Number
 int passengerAge[2][100];
 
 int main() {
-	int choice, seatType, seatNumber, age;
-	string name, passportNumber,acceptOtherClass;
+	int choice, age, seatType, seatNumber;
+	string name, passportNumber, acceptOtherClass;
 	char sex;
 
 	 cout << "========================================================\n" <<"|*** "<<
@@ -40,10 +40,10 @@ int main() {
 
 					cout << "Enter your name: ";
 					cin.ignore();
-					int trialCount = 0;
+					int trialCount = 3;
                     a:
 					getline(cin, name);
-					trialCount++;
+					trialCount--;
 					bool validname = true;
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
@@ -51,8 +51,8 @@ int main() {
 
 						}
 						if(!validname) {
-							if (trialCount < 4) {
-								cout << "A name can only contain alphabets and spaces! Please try again." << endl;
+							if (trialCount >0) {
+								cout << "A name can only contain alphabets and spaces!. You have left " <<trialCount <<" trial"<< endl;
 								goto a;
 							}
 							else {
@@ -64,15 +64,15 @@ int main() {
 					}
 
 					cout << "Enter your sex: ";
-					trialCount = 0;
+					trialCount = 3;
                     b:
 					cin >> sex;
 					sex=toupper(sex);       // to convert lowercase to uppercase letter
-					trialCount++;
+					trialCount--;
 
 					if (sex != 'M' && sex != 'F') { // Validate gender input
-						if (trialCount < 4) {
-							cout << "That is not a valid gender! Try To insert letter M for male, letter F for female." << endl;
+						if (trialCount >0) {
+							cout << "That is not a valid gender! Try To insert letter M for male, letter F for female. You have left "<<trialCount <<" trial"<<endl;
 							goto b;
 						}
 						else {
@@ -82,13 +82,13 @@ int main() {
 					}
 
 					cout << "Enter your age: ";
-					trialCount = 0;
+					trialCount = 3;
                     c:
 					cin >> age;
-					trialCount++;
+					trialCount--;
 					if (cin.fail() || age < 0) {
-						if (trialCount < 4) {
-							cout << "Invalid age! Please enter a valid age again: ";
+						if (trialCount >0) {
+							cout << "Invalid age! Please enter a valid age again. You have left "<<trialCount<<" trial"<<endl;
 							cin.clear();
 							cin.ignore(1000, '\n');
 							goto c;
@@ -101,17 +101,17 @@ int main() {
 					}
 					cin.ignore(1000, '\n');
 					cout << "Enter your passport number: ";
-					trialCount = 0;
+					trialCount = 3;
                     d:
 					getline(cin, passportNumber);
-					trialCount++;
+					trialCount--;
 					bool validPassport = true;
 
-					if (!isalpha(passportNumber[0]) || !isalpha(passportNumber[1])) {   // Check if the first two characters are alphabets
+					if (!isalpha(passportNumber[0]) || !isalpha(passportNumber[1])) {  
 						validPassport = false;
 					}
 
-					if (passportNumber.length() != 9) { // Check if the length is 9 and all characters are alphanumeric
+					if (passportNumber.length() != 9) { 
 						validPassport = false;
 					} else {
 						for (char c : passportNumber) {
@@ -123,8 +123,8 @@ int main() {
 					}
 
 					if (!validPassport) {
-						if (trialCount < 4) {
-							cout << "Invalid Passport number! The first two characters must be alphabets, and the length must be exactly 9 alphanumeric characters. Please try again." << endl;
+						if (trialCount >0) {
+							cout << "Invalid Passport number! The first two characters must be alphabets, and the length must be exactly 9 alphanumeric characters. You have left "<<trialCount<<" trial"<< endl;
 							goto d;
 						} else {
 							cout << "Maximum trial limit reached. Please restart the process." << endl;
@@ -161,14 +161,13 @@ int main() {
 			    cout<<"Next flight leaves in 3 hours.";
 				    
 				}else if (seatType == 1 ? "First Class" : "Economy") {
-				cout <<(seatType == 1 ? "First Class" : "Economy") <<"is also fully booked. Next flight leaves in 3 hours." << endl;
+				cout <<(seatType == 1 ? "First Class" : "Economy") <<" is also fully booked. Next flight leaves in 3 hours." << endl;
 			}
-			}
+		}
 
-			
 		} else if (choice == 3) {
 			cout << "First Class Seat Status:" << endl;
-			for (int i = 0; i < 20; ++i) {
+			for (int i = 0; i < 30; ++i) {
 				cout << "Seat " << i + 1 << ": " << (seats[0][i] ? "Occupied" : "Available") << endl;
 			}
 			cout << "Economy Seat Status:" << endl;
