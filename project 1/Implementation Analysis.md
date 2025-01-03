@@ -29,7 +29,7 @@ The seat management system is responsible for handling seat assignments, ensurin
 
 This component stores all passenger details, including names, genders, ages, and passport numbers. The database should be designed to ensure data integrity and security. It should also support quick retrieval and updates of passenger information, enabling efficient reservation management and search functionalities.
 
-## Data Validation and Error Handling
+## Data Validation and Error Handling:
 
 Robust data validation mechanisms are essential to ensure the accuracy of user inputs. The system should validate all fields, such as names, genders, ages, and passport numbers, to prevent incorrect or incomplete information from being processed. Comprehensive error handling should be implemented to manage non-numeric selections, out-of-range values, and invalid data. 
 Clear error messages should guide users to correct their inputs, enhancing the overall user experience.
