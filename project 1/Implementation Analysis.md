@@ -38,7 +38,7 @@ Clear error messages should guide users to correct their inputs, enhancing the o
 
 The system should provide real-time displays of seat occupancy statuses for both First Class and Economy Class. This feature will help airline staff manage reservations effectively, offering insights into which sections are nearing full capacity. It aids in operational planning and decision-making, ensuring that staff can respond quickly to changing reservation dynamics.
 
-## Search and Reservation Management
+## Search and Reservation Management:
 
 The search functionality allows staff to quickly look up reservations based on passenger names, facilitating efficient customer service. 
 The system should support easy modifications or cancellations of existing bookings, ensuring flexibility and convenience for both passengers and staff.
