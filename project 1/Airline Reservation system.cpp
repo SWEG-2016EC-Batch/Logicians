@@ -12,7 +12,7 @@ string economyPassengerDetails[70];
 int main() {
 	int choice,age;
 	string name, passportNumber;
-	char gender; //to take information regarding the person
+	char sex; //to take information regarding the person
 
 	cout<<"********************************************************"<<endl;
 	cout<<"*   Welcome to Logicians Airline Reservation System!   *" << endl;
@@ -33,54 +33,101 @@ int main() {
 					firstClassSeats[i] = true;
 					cout << "Enter your name: ";
 					cin.ignore();
+					int trialCount = 3;
                     a:
 					getline(cin, name);
+					trialCount--;
+					bool validname = true;
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
-							cout << "A name can only contain alphabets and spaces! Please try again." << endl;
-							goto a;
+							validname=false;
+
 						}
-					}
-					cout << "Enter your sex: ";
-                    b:
-					cin>>gender;
-					if (islower(gender)) { // Convert lowercase to uppercase
-						gender = toupper(gender);
+						if(!validname) {
+							if (trialCount >0) {
+								cout << "A name can only contain alphabets and spaces!. You have left " <<trialCount <<" trial"<< endl;
+								goto a;
+							}
+							else {
+								cout << "Maximum trial limit reached. Please restart the process." << endl;
+								return 1; // Exit the program or handle as needed
+							}
+						}
+
 					}
 
-					if (gender != 'M' && gender != 'F' ) { // Validate gender input
-						cout << "That is not a valid gender! Enter again" << endl;
-						goto b;
+					cout << "Enter your sex: ";
+					trialCount = 3;
+                    b:
+					cin >> sex;
+					sex=toupper(sex);       // to convert lowercase to uppercase letter
+					trialCount--;
+
+					if (sex != 'M' && sex != 'F') { // Validate gender input
+						if (trialCount >0) {
+							cout << "That is not a valid gender! Try To insert letter M for male, letter F for female. You have left "<<trialCount <<" trial"<<endl;
+							goto b;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
 					}
 					cout << "Enter your age: ";
+					trialCount = 3;
                     c:
 					cin >> age;
-					if (cin.fail() || age < 0 ) { //Checking proper age
-						cout << "Invalid age! Please enter a valid age again ";
-						cin.clear();
-						cin.ignore(10000,'\n');
-						goto c;
+					trialCount--;
+					if (cin.fail() || age < 0) {
+						if (trialCount >0) {
+							cout << "Invalid age! Please enter a valid age again. You have left "<<trialCount<<" trial"<<endl;
+							cin.clear();
+							cin.ignore(1000, '\n');
+							goto c;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
+
 					}
                      cin.ignore(10000,'\n');
 					cout << "Enter your passport number: ";
-					cin.ignore();
+					trialCount = 3;
                     d:
 					getline(cin, passportNumber);
-					for (char c : passportNumber) {
-						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
-							cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
-							goto d;
+					trialCount--;
+					bool validPassport = true;
+
+					if (!isalpha(passportNumber[0]) || !isalpha(passportNumber[1])) {  
+						validPassport = false;
+					}
+
+					if (passportNumber.length() != 9) { 
+						validPassport = false;
+					} else {
+						for (char c : passportNumber) {
+							if (!isalnum(c)) {
+								validPassport = false;
+								break;
+							}
 						}
 					}
-					if (passportNumber.length() !=9) {// passport number  size(length) must be 9 
-						cout << "Invalid Passport number size must be exactly 9 enter again"<<endl;
-						goto d;
+
+					if (!validPassport) {
+						if (trialCount >0) {
+							cout << "Invalid Passport number! The first two characters must be alphabets, and the length must be exactly 9 alphanumeric characters. You have left "<<trialCount<<" trial"<< endl;
+							goto d;
+						} else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
 					}
 
 					firstClassPassengerDetails[i] = name;
 
 					cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
-					cout << "Passenger Details: " << name << ", " << gender << ", " << age << ", " << passportNumber << endl;
+					cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
 					seatAssigned = true; // This is to check whether the inputs are taken as expected
 					break;
 				}
@@ -95,54 +142,101 @@ int main() {
 							economySeats[i] = true;
 							cout << "Enter your name: ";
 					cin.ignore();
+					 int trialCount = 3;
                     e:
 					getline(cin, name);
+					trialCount--;
+					bool validname = true;
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
-							cout << "A name can only contain alphabets and spaces! Please try again." << endl;
-							goto e;
+							validname=false;
+
 						}
-					}
-					cout << "Enter your sex: ";
-                    f:
-					cin>>gender;
-					if (islower(gender)) { // Convert lowercase to uppercase
-						gender = toupper(gender);
+						if(!validname) {
+							if (trialCount >0) {
+								cout << "A name can only contain alphabets and spaces!. You have left " <<trialCount <<" trial"<< endl;
+								goto e;
+							}
+							else {
+								cout << "Maximum trial limit reached. Please restart the process." << endl;
+								return 1; // Exit the program or handle as needed
+							}
+						}
+
 					}
 
-					if (gender != 'M' && gender != 'F' ) { // Validate gender input
-						cout << "That is not a valid gender! Enter again" << endl;
-						goto f;
+					cout << "Enter your sex: ";
+					trialCount = 3;
+                    f:
+					cin >> sex;
+					sex=toupper(sex);       // to convert lowercase to uppercase letter
+					trialCount--;
+
+					if (sex != 'M' && sex != 'F') { // Validate gender input
+						if (trialCount >0) {
+							cout << "That is not a valid gender! Try To insert letter M for male, letter F for female. You have left "<<trialCount <<" trial"<<endl;
+							goto f;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
 					}
 					cout << "Enter your age: ";
+					trialCount = 3;
                     g:
 					cin >> age;
-					if (cin.fail() || age < 0 ) { // age is again checked
-						cout << "Invalid age! Please enter a valid age again ";
-						cin.clear();
-						cin.ignore(10000,'\n');
-						goto g;
+					trialCount--;
+					if (cin.fail() || age < 0) {
+						if (trialCount >0) {
+							cout << "Invalid age! Please enter a valid age again. You have left "<<trialCount<<" trial"<<endl;
+							cin.clear();
+							cin.ignore(1000, '\n');
+							goto g;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
+
 					}
                     cin.ignore(10000,'\n');
 					cout << "Enter your passport number: ";
-					cin.ignore();
+					trialCount = 3;
                     h:
 					getline(cin, passportNumber);
-					for (char c : passportNumber) {
-						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
-							cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
-							goto h;
+					trialCount--;
+					bool validPassport = true;
+
+					if (!isalpha(passportNumber[0]) || !isalpha(passportNumber[1])) {  
+						validPassport = false;
+					}
+
+					if (passportNumber.length() != 9) { 
+						validPassport = false;
+					} else {
+						for (char c : passportNumber) {
+							if (!isalnum(c)) {
+								validPassport = false;
+								break;
+							}
 						}
 					}
-					if (passportNumber.length() !=9) {// passport number  size(length) must be 9 
-						cout << "Invalid Passport number size must be exactly 9 enter again"<<endl;
-						goto h;
+
+					if (!validPassport) {
+						if (trialCount >0) {
+							cout << "Invalid Passport number! The first two characters must be alphabets, and the length must be exactly 9 alphanumeric characters. You have left "<<trialCount<<" trial"<< endl;
+							goto h;
+						} else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
 					}
 
 							economyPassengerDetails[i] = name;
 
 							cout << "Boarding Pass: Seat " << (i + 31) << ", Economy" << endl;
-							cout << "Passenger Details: " << name << ", " << gender << ", " << age << ", " << passportNumber << endl;
+							cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
 							seatAssigned = true;
 							break;
 						}
@@ -161,53 +255,100 @@ int main() {
 					economySeats[i] = true;
 					cout << "Enter your name: ";
 					cin.ignore();
+					int trialCount = 3;
                     i:
 					getline(cin, name);
+					trialCount--;
+					bool validname = true;
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
-							cout << "A name can only contain alphabets and spaces! Please try again." << endl;
-							goto i;
+							validname=false;
+
 						}
+						if(!validname) {
+							if (trialCount >0) {
+								cout << "A name can only contain alphabets and spaces!. You have left " <<trialCount <<" trial"<< endl;
+								goto i;
+							}
+							else {
+								cout << "Maximum trial limit reached. Please restart the process." << endl;
+								return 1; // Exit the program or handle as needed
+							}
+						}
+
 					}
 					cout << "Enter your sex: ";
+					trialCount = 3;
                     j:
-					cin>>gender;
-					if (islower(gender)) { // Convert lowercase to uppercase
-						gender = toupper(gender);
-					}
+					cin >> sex;
+					sex=toupper(sex);       // to convert lowercase to uppercase letter
+					trialCount--;
 
-					if (gender != 'M' && gender != 'F' ) { // Validate gender input
-						cout << "That is not a valid gender! Enter again" << endl;
-						goto j;
-					}
-					cout << "Enter your age: ";
-                    k:
-                    cin>>age;
-					if (cin.fail() || age < 0 ) {
-						cout << "Invalid age! Please enter a valid age again ";
-						cin.clear();
-						cin.ignore(10000,'\n');
-						goto k;
-					}
-                    cin.ignore(10000,'\n');
-					cout << "Enter your passport number: ";
-					cin.ignore();
-                    l:
-					getline(cin, passportNumber);
-					for (char c : passportNumber) {
-						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
-							cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
-							goto l;
+					if (sex != 'M' && sex != 'F') { // Validate gender input
+						if (trialCount >0) {
+							cout << "That is not a valid gender! Try To insert letter M for male, letter F for female. You have left "<<trialCount <<" trial"<<endl;
+							goto j;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
 						}
 					}
-					if (passportNumber.length() !=9) {// passport number  size(length) must be 9 
-						cout << "Invalid Passport number size must be exactly 9 enter again"<<endl;
-						goto l;
+
+					cout << "Enter your age: ";
+					trialCount = 3;
+                    k:
+					cin >> age;
+					trialCount--;
+					if (cin.fail() || age < 0) {
+						if (trialCount >0) {
+							cout << "Invalid age! Please enter a valid age again. You have left "<<trialCount<<" trial"<<endl;
+							cin.clear();
+							cin.ignore(1000, '\n');
+							goto k;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
+
+					}
+                    cin.ignore(1000, '\n');
+					cout << "Enter your passport number: ";
+					trialCount = 3;
+                    l:
+					getline(cin, passportNumber);
+					trialCount--;
+					bool validPassport = true;
+
+					if (!isalpha(passportNumber[0]) || !isalpha(passportNumber[1])) {  
+						validPassport = false;
+					}
+
+					if (passportNumber.length() != 9) { 
+						validPassport = false;
+					} else {
+						for (char c : passportNumber) {
+							if (!isalnum(c)) {
+								validPassport = false;
+								break;
+							}
+						}
+					}
+
+					if (!validPassport) {
+						if (trialCount >0) {
+							cout << "Invalid Passport number! The first two characters must be alphabets, and the length must be exactly 9 alphanumeric characters. You have left "<<trialCount<<" trial"<< endl;
+							goto l;
+						} else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
 					}
 					economyPassengerDetails[i] = name;
 
 					cout << "Boarding Pass: Seat " << (i + 31) << ", Economy" << endl;
-					cout << "Passenger Details: " << name << ", " << gender << ", " << age << ", " << passportNumber << endl;
+					cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
 					seatAssigned = true;
 					break;
 				}
@@ -222,53 +363,99 @@ int main() {
 							firstClassSeats[i] = true;
 								cout << "Enter your name: ";
 					cin.ignore();
+					int trialCount = 3;
                     m:
 					getline(cin, name);
+					trialCount--;
+					bool validname = true;
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
-							cout << "A name can only contain alphabets and spaces! Please try again." << endl;
-							goto m;
+							validname=false;
+
 						}
+						if(!validname) {
+							if (trialCount >0) {
+								cout << "A name can only contain alphabets and spaces!. You have left " <<trialCount <<" trial"<< endl;
+								goto m;
+							}
+							else {
+								cout << "Maximum trial limit reached. Please restart the process." << endl;
+								return 1; // Exit the program or handle as needed
+							}
+						}
+
 					}
 					cout << "Enter your sex: ";
+					trialCount = 3;
                     n:
-					cin>>gender;
-					if (islower(gender)) { // Convert lowercase to uppercase
-						gender = toupper(gender);
-					}
+					cin >> sex;
+					sex=toupper(sex);       // to convert lowercase to uppercase letter
+					trialCount--;
 
-					if (gender != 'M' && gender != 'F' ) { // Validate gender input
-						cout << "That is not a valid gender! Enter again" << endl;
-						goto n;
+					if (sex != 'M' && sex != 'F') { // Validate gender input
+						if (trialCount >0) {
+							cout << "That is not a valid gender! Try To insert letter M for male, letter F for female. You have left "<<trialCount <<" trial"<<endl;
+							goto n;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
 					}
 					cout << "Enter your age: ";
+					trialCount = 3;
                     o:
 					cin >> age;
-					if (cin.fail() || age < 0 ) {
-						cout << "Invalid age! Please enter a valid age again ";
-						cin.clear();
-						cin.ignore(10000,'\n');
-						goto o;
+					trialCount--;
+					if (cin.fail() || age < 0) {
+						if (trialCount >0) {
+							cout << "Invalid age! Please enter a valid age again. You have left "<<trialCount<<" trial"<<endl;
+							cin.clear();
+							cin.ignore(1000, '\n');
+							goto o;
+						}
+						else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
+
 					}
                      cin.ignore(10000,'\n');
 					cout << "Enter your passport number: ";
-					cin.ignore();
+					trialCount = 3;
                     p:
 					getline(cin, passportNumber);
-					for (char c : passportNumber) {
-						if (!isalpha(c) && !isalnum(c) ) {// passport number only can be Alphabet and numbers
-							cout << "A Passport number can only contain alphabets and number! Please try again." << endl;
-							goto p;
+					trialCount--;
+					bool validPassport = true;
+
+					if (!isalpha(passportNumber[0]) || !isalpha(passportNumber[1])) {  
+						validPassport = false;
+					}
+
+					if (passportNumber.length() != 9) { 
+						validPassport = false;
+					} else {
+						for (char c : passportNumber) {
+							if (!isalnum(c)) {
+								validPassport = false;
+								break;
+							}
 						}
 					}
-					if (passportNumber.length() !=9) {// passport number  size(length) must be 9 
-						cout << "Invalid Passport number size must be exactly 9 enter again"<<endl;
-						goto p;
+
+					if (!validPassport) {
+						if (trialCount >0) {
+							cout << "Invalid Passport number! The first two characters must be alphabets, and the length must be exactly 9 alphanumeric characters. You have left "<<trialCount<<" trial"<< endl;
+							goto p;
+						} else {
+							cout << "Maximum trial limit reached. Please restart the process." << endl;
+							return 1;
+						}
 					}
 							firstClassPassengerDetails[i] = name;
-//then we print the details
+                                     //then we print the details
 						cout << "Boarding Pass: Seat " << (i + 1) << ", First Class" << endl;
-							cout << "Passenger Details: " << name << ", " << gender << ", " << age << ", " << passportNumber << endl;
+							cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
 							seatAssigned = true;
 							break;
 						}
