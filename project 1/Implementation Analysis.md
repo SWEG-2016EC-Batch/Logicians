@@ -25,7 +25,7 @@ The seat management system is responsible for handling seat assignments, ensurin
 
 **Boarding Pass Generation:** Generate a digital boarding pass using their name and class selection after a successful reservation.
 
-**Passenger Details:** Atlast it show their details information that the user fill in the reservation system.
+**Passenger Details:** At last it shows tothe user their details information that the user fill in the reservation system.
 
 ## Passenger Information Database:
 
