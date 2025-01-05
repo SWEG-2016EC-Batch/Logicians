@@ -6,9 +6,10 @@
 
 using namespace std;
 
-bool seats[2][100] = {false}; // 0-29: First Class -> row 0, 30-99: Economy -> row 1
-string passengerDetails[2][100][3];  // [][0]: Name, [][1]: Sex, [][2]: Passport Number
-int passengerAge[2][100];
+    // Boolean array to track the seats occupancy status
+bool seats[2][100] = {false}; 
+string passengerDetails[2][100][3];  //store passenger details [][0]: Name, [][1]: Sex, [][2]: Passport Number
+int passengerAge[2][100];           // Array to store passenger age
 
 int main() {
 	int choice, age, seatType, seatNumber;
@@ -18,10 +19,12 @@ int main() {
 	 cout << "========================================================\n" <<"|*** "<<
 	         "Welcome to Logicians Airline Reservation System!" <<"***|\n" << 
 	         "=========================================================\n" <<endl;
+	         
+	                 // Loop to display menu and process user choices
 	while (true) {
 	    cout << "\n Please Select an option from the menu below:\n";
-		cout << "1. Please type 1 for First Class" << endl;
-		cout << "2. Please type 2 for Economy" << endl;
+		cout << "1. Please type 1 for First Class Reservation" << endl;
+		cout << "2. Please type 2 for Economy Class Reservation" << endl;
 		cout << "3. Please type 3 to see available and occupied seats" << endl;
 		cout << "4. Please type 4 to cancel a reservation" << endl;
 		cout << "5. Please type 5 to search for a passenger by name" << endl;
@@ -31,10 +34,10 @@ int main() {
 		cin >> choice;
 			
 		z:
-		if (choice == 1 || choice == 2) {
+		if (choice == 1 || choice == 2) {   // Determine seat type (First Class or Economy)
 			seatType = (choice == 1) ? 0 : 1;
 			bool seatAssigned = false;
-			for (int i = 0; i < ((seatType == 0) ? 30 : 70); ++i) {
+			for (int i = 0; i < ((seatType == 0) ? 30 : 70); ++i) {   // Find and assign a seat in the selected class
 				if (!seats[seatType][i]) {
 					seats[seatType][i] = true;
 
@@ -45,6 +48,8 @@ int main() {
 					getline(cin, name);
 					trialCount--;
 					bool validname = true;
+					
+					// Iterate through each character in the passenger's name
 					for (char c : name) {
 						if (!isalpha(c) && !isspace(c)) {
 							validname=false;
@@ -67,10 +72,10 @@ int main() {
 					trialCount = 3;
                     b:
 					cin >> sex;
-					sex=toupper(sex);       // to convert lowercase to uppercase letter
+					sex=toupper(sex);       // To convert lowercase to uppercase letter
 					trialCount--;
 
-					if (sex != 'M' && sex != 'F') { // Validate gender input
+					if (sex != 'M' && sex != 'F') {
 						if (trialCount >0) {
 							cout << "That is not a valid gender! Try To insert letter M for male, letter F for female. You have left "<<trialCount <<" trial"<<endl;
 							goto b;
@@ -124,28 +129,34 @@ int main() {
 
 					if (!validPassport) {
 						if (trialCount >0) {
-							cout << "Invalid Passport number! The first two characters must be alphabets, and the length must be exactly 9 alphanumeric characters. You have left "<<trialCount<<" trial"<< endl;
+							cout << "Invalid Passport number! The first two characters must be alphabets, and the length"<<
+							" must be exactly 9 alphanumeric characters. You have left "<<trialCount<<" trial"<< endl;
 							goto d;
 						} else {
 							cout << "Maximum trial limit reached. Please restart the process." << endl;
 							return 1;
 						}
 					}
-					
+				     	// Store passenger details
 					passengerDetails[seatType][i][0] = name;
 					passengerDetails[seatType][i][1] = sex;
 					passengerDetails[seatType][i][2] = passportNumber;
 					passengerAge[seatType][i] = age;
-
+					
+                                        cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+				        cout << "----------------------------------------------------------" << endl;
 					cout << "Boarding Pass: Seat " << (i + 1 + (seatType == 1 ? 30 : 0)) << ", " << (seatType == 0 ? "First Class" : "Economy") << endl;
 					cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
-					sleep(3);
+					cout << "----------------------------------------------------------" << endl;
+					cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+					
+					sleep(3); // Pause the program for 3 seconds to simulate processing time or delay
 					seatAssigned = true;
 					break;
 				}
 			}
-            system("clear");
-			if (!seatAssigned) {
+                     system("clear"); // Clear the console screen to provide a clean display for the next output
+			if (!seatAssigned) {   // Handle case when selected class is fully booked
 				if (seatType == 0) {
 					cout << "First Class is fully booked. Would you like to be placed in Economy? (Yes/No): ";
 				} else {
@@ -155,10 +166,12 @@ int main() {
 				getline(cin, acceptOtherClass);
 
 				if (acceptOtherClass == "Yes" || acceptOtherClass == "yes") {
-				 choice = (choice == 1) ? 2 : 1;                                 // Switch the choice to other class (1 to 2 or 2 to 1)
-					goto z;
+				 choice = (choice == 1) ? 2 : 1; // Switch the choice to other class (1 to 2 or 2 to 1)
+				 
+					goto z; // Go back and recheck availability in the other class
+					
 				}else if (acceptOtherClass == "No" || acceptOtherClass == "no") {
-			    cout<<"Next flight leaves in 3 hours.";
+			    cout<<"Next flight leaves in 3 hours.";  // Inform the user that the next flight is in 3 hours
 				    
 				}else if (seatType == 1 ? "First Class" : "Economy") {
 				cout <<(seatType == 1 ? "First Class" : "Economy") <<" is also fully booked. Next flight leaves in 3 hours." << endl;
@@ -184,12 +197,12 @@ int main() {
 			seatType = (seatNumber <= 30) ? 0 : 1;
 			int seatIndex = (seatType == 0) ? seatNumber - 1 : seatNumber - 31;
 
-			if (seats[seatType][seatIndex] && passengerDetails[seatType][seatIndex][2] == passportNumber) {
-				seats[seatType][seatIndex] = false;
-				passengerDetails[seatType][seatIndex][0].clear();
-				passengerDetails[seatType][seatIndex][1].clear();
-				passengerDetails[seatType][seatIndex][2].clear();
-				passengerAge[seatType][seatIndex] = 0;
+			if (seats[seatType][seatIndex] && passengerDetails[seatType][seatIndex][2] == passportNumber) { // Check if the seat is occupied and the passport number matches
+				seats[seatType][seatIndex] = false;                       // Mark the seat as unoccupied
+				passengerDetails[seatType][seatIndex][0].clear();        // Clear passenger name
+				passengerDetails[seatType][seatIndex][1].clear();       // Clear passenger sex
+				passengerDetails[seatType][seatIndex][2].clear();      // Clear passenger passport number
+				passengerAge[seatType][seatIndex] = 0;                // Reset passenger age to 0
 
 				cout << "\nReservation for seat " << seatNumber << " in " << (seatType == 0 ? "First Class" : "Economy") << " has been canceled." << endl;
 			} else {
@@ -224,7 +237,7 @@ int main() {
 					}
 				}
 			}
-
+               // If passenger not found in both classes
 			if (!passengerFound) {
 				cout << "Passenger not found.\n" << endl;
 			}
