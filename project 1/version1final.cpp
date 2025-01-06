@@ -33,7 +33,7 @@ int main() {
 	 // Loop to display menu and process user choices,it itrates until the given condtion is false 
 	while (true) {
 		cout << "\nPlease type 1 for First Class" << endl;
-		cout << "Please type 2 for Economy" << endl;
+		cout << "please type 2  to economy class" << endl;
 		cout << "Please type 3 to see available and Occupied seat" << endl;
 		cout << "Please type 4 to cancel a reservation" << endl;
 		cout << "Please type 5 to search for a passenger by name" << endl;
