@@ -118,7 +118,7 @@ c:
 					cout << "Enter your passport number: ";
 					trialCount = 0;
 d:
-					getline(cin, passportNumber);
+					 getline(cin, passportNumber);
 					trialCount++;
 					bool validPassport = true;
 
