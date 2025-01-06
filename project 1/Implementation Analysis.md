@@ -5,7 +5,7 @@
 Implementing the Airline Seat Reservation System involves several key steps to ensure that it meets all the functional and non-functional requirements while providing a seamless user experience. 
 Here’s a clear and humanized breakdown of the implementation analysis:
 
-## System Design:
+## System design:
 
 The system design phase involves planning the architecture and components of the system. The main components include the user interface, seat management system, passenger information database, and error handling mechanisms. The design should prioritize simplicity and user-friendliness to ensure that both passengers and airline staff can easily navigate the system.
 
@@ -55,7 +55,7 @@ Before deploying the system, thorough testing is necessary to ensure that all co
 
 **User Acceptance Testing (UAT):** Involving real users to test the system in a simulated environment to ensure it meets their needs and expectations.
 
-## Deployment and Maintenance:
+## Deployment and maintainance:
 
 Once testing is complete, the system can be deployed for use by the airline. 
 Regular maintenance and updates will be necessary to address any issues that arise and to ensure the system continues to operate smoothly. 
