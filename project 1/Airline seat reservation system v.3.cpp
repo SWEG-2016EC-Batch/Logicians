@@ -1,15 +1,15 @@
- /*
-Group name:Logicians
-Project Title:Air line seast reservation system
-MEMBERS
-1.Paulos Asmelash
-2.Rahmet Abdelah  ETS1161/16
-3.Sara Redwan
-4.Samuel Lire
-5.Salim Ahmed
+ /*   FOP GROUP PROJECT
 
- */
+   Group Member name and Id  
+  Name                      Id
+ 
+1.Paulos Asmelash      ETS1149/16
+2.Rahmet Abdelah       ETS1161/16
+3.Salim Ahmed          ETS1213/16
+4.Samuel Lir           ETS1230/16
+5.Sara Redwan          ETS1241/16
 
+*/
 #include <iostream>
 #include <string>
 #include <cctype>
