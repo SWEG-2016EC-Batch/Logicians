@@ -2,7 +2,7 @@
 
 ***
 
-Implementing the Airline Seat Reservation System involves several key steps to ensure that it meets all the functional and non-functional requirements while providing a seamless user experience. 
+Implementing the air line reservation system  involves several key steps to ensure that it meets all the functional and non-functional requirements while providing a seamless user experience. 
 Here’s a clear and humanized breakdown of the implementation analysis:
 
 ## System design:
