@@ -153,7 +153,7 @@ int main() {
 					passengerDetails[seatType][i][2] = passportNumber;
 					passengerAge[seatType][i] = age;
 					
-                                        cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+                                         cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 				        cout << "----------------------------------------------------------" << endl;
 					cout << "Boarding Pass: Seat " << (i + 1 + (seatType == 1 ? 30 : 0)) << ", " << (seatType == 0 ? "First Class" : "Economy") << endl;
 					cout << "Passenger Details: " << name << ", " << sex << ", " << age << ", " << passportNumber << endl;
