@@ -22,7 +22,7 @@ string passengerDetails[2][100][3];  //store passenger details [][0]: Name, [][1
 int passengerAge[2][100];           // Array to store passenger age
 
 int main() {
-	int choice, age, seatType, seatNumber;
+	 int choice, age, seatType, seatNumber;
 	string name, passportNumber, acceptOtherClass;
 	char sex;
 
