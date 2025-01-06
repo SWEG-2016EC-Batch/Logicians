@@ -4,7 +4,7 @@
   Name                      Id
  
 1.Paulos Asmelash      ETS1149/16
-2.Rahmet Abdela        ETS1161/16
+2.Rahmet Abdelah       ETS1161/16
 3.Salim Ahmed          ETS1213/16
 4.Samuel Lir           ETS1230/16
 5.Sara Redwan          ETS1241/16
