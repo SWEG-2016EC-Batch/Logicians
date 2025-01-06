@@ -2,7 +2,7 @@
 
 ```mermaid
 graph TD
-   A(((Start))) --> B[Display Welcome Message]
+   A([Start]) --> B[Display Welcome Message]
     B --> C[Show Menu Options]
     C --> D{User Choice?}
     
@@ -40,7 +40,7 @@ graph TD
     AC -->|Yes| AE[Display Details]
     AA -->|Yes| AE
     
-    D -->|6| AF(((Exit Program)))
+    D -->|6| AF([Exit Program])
     
     M --> AG{Continue?}
     O --> AG
