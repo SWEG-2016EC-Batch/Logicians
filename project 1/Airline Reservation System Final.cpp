@@ -276,7 +276,7 @@ int main() {
 		}
 
 		else if(answer=="no"||answer=="NO") {
-			goto end;;
+			goto end;
 		}
 	}
 	return 0;
