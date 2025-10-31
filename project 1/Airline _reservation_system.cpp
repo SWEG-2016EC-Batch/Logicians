@@ -1,13 +1,3 @@
-/*
-    NAME               ID
-
-Samuel Lire         ETS1230/16
-Paulos Asmelash     ETS1149/16
-Salim Ahmed         ETS1213/16
-Rahmet Abdella      ETS1161/16
-Sara Redwan         ETS1241/16
-*/
-
 #include <bits/stdc++.h>
 using namespace std;
 
